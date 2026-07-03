@@ -2,7 +2,7 @@
    Global
 ========================== */
 
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -10,12 +10,12 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-}
+} */
 
 /* ==========================
    Navbar
 ========================== */
-
+/* 
 .navbar {
   width: 100%;
   background: #111827;
@@ -31,14 +31,12 @@ body {
   margin: auto;
 
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* ==========================
+  /* justify-content: space-between; */
+  /* align-items: center;
+/* } */ /* ==========================
    Logo
 ========================== */
-
+/* 
 .logo-gradient {
   display: flex;
   align-items: center;
@@ -75,12 +73,12 @@ body {
   color: #ef4444;
   font-size: 30px;
   font-weight: 700;
-}
+} */
 
 /* ==========================
    Navigation
 ========================== */
-
+/* 
 .nav-links {
   list-style: none;
 
@@ -110,12 +108,12 @@ body {
 
 .nav-links a:hover {
   color: #ef4444;
-}
+} */
 
 /* ==========================
    Button
 ========================== */
-
+/* 
 .nav-buttons {
   display: flex;
   align-items: center;
@@ -144,13 +142,13 @@ body {
 .register-btn:hover {
   background: #b91c1c;
   transform: translateY(-2px);
-}
+} */
 
 /* ==========================
    Responsive
 ========================== */
 
-@media (max-width: 1100px) {
+/* @media (max-width: 1100px) {
   .navbar {
     padding: 16px 25px;
   }
@@ -213,4 +211,4 @@ body {
     padding: 10px 16px;
     font-size: 14px;
   }
-}
+} */
