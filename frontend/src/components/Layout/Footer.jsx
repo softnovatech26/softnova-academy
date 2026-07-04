@@ -137,7 +137,7 @@ const Footer = () => {
       <div className="flex items-center gap-[15px] mb-[25px] md:justify-start justify-center">
 
         <img
-          src="./public/SoftNova Logo1-06.png"
+          src="/softnovalogo(2).png"
           alt="SoftNova Academy Logo"
           className="w-[65px]"
         />
