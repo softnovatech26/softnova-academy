@@ -1,4 +1,7 @@
+import React from "react";
+
 const Home = () => {
+<<<<<<< HEAD
   return (
     <main className="min-h-screen bg-[#0a0a0a] flex items-center justify-center p-8">
       {/* Background radial gradient effect */}
@@ -48,6 +51,9 @@ const Home = () => {
       </div>
     </main>
   );
+=======
+  return <main style={{ minHeight: "100vh", padding: "2rem" }} />;
+>>>>>>> c488906f02b0e200dd9d8039d95be957d8cf0a9a
 };
 
 export default Home;

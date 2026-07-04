@@ -1,22 +1,22 @@
-.footer {
+/* .footer {
   background: #000;
   color: #fff;
   position: relative;
   margin-top: 80px;
   overflow: hidden;
-}
+} */
 
 /* Top Wave */
 
-.footer-wave {
+/* .footer-wave {
   height: 90px;
   background: linear-gradient(180deg, #ff0000 0%, #b30000 100%);
   clip-path: ellipse(80% 100% at 50% 0%);
-}
+} */
 
 /* Main */
 
-.footer-container {
+/* .footer-container {
   width: 90%;
   max-width: 1300px;
   margin: auto;
@@ -24,18 +24,18 @@
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1.3fr;
   gap: 60px;
-}
+} */
 
 /* Logo */
 
-.footer-logo {
+/* .footer-logo {
   display: flex;
   align-items: center;
   gap: 15px;
   margin-bottom: 25px;
-}
+} */
 
-.footer-logo img {
+/* .footer-logo img {
   width: 65px;
 }
 
@@ -48,20 +48,20 @@
 .footer-logo span {
   display: block;
   color: #ff2d2d;
-}
+} */
 
 /* Description */
 
-.footer-description {
+/* .footer-description {
   color: #c9c9c9;
   line-height: 1.8;
   font-size: 17px;
   margin-bottom: 30px;
-}
+} */
 
 /* Social */
 
-.social-icons {
+/* .social-icons {
   display: flex;
   gap: 16px;
 }
@@ -84,11 +84,11 @@
   background: white;
   color: #ef2b2d;
   transform: translateY(-5px);
-}
+} */
 
 /* Columns */
 
-.footer-column h3 {
+/* .footer-column h3 {
   color: #ff3b3b;
   font-size: 28px;
   margin-bottom: 25px;
@@ -110,11 +110,11 @@
 .footer-column ul li:hover {
   color: #ff3b3b;
   padding-left: 8px;
-}
+} */
 
 /* Contact */
 
-.contact-info p {
+/* .contact-info p {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -138,11 +138,11 @@
 .contact-btn:hover {
   background: white;
   color: #ef2b2d;
-}
+} */
 
 /* Bottom */
 
-.footer-bottom {
+/* .footer-bottom {
   border-top: 1px solid #222;
   text-align: center;
   padding: 25px 10px;
@@ -160,11 +160,11 @@
 
 .designer {
   color: #ff4b4b !important;
-}
+} */
 
 /* Responsive */
 
-@media (max-width: 992px) {
+/* @media (max-width: 992px) {
   .footer-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
@@ -192,4 +192,148 @@
   .footer-column h3 {
     margin-top: 20px;
   }
+} */
+
+
+
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/* .footer {
+  @apply bg-black text-white relative mt-20 overflow-hidden;
+} */
+
+/* Top Wave */
+
+/* .footer-wave {
+  @apply h-[90px] bg-gradient-to-b from-red-600 to-red-800;
+  clip-path: ellipse(80% 100% at 50% 0%);
+} */
+
+/* Main */
+
+/* .footer-container {
+  @apply w-[90%] max-w-[1300px] mx-auto py-[60px] grid gap-[60px]
+         lg:grid-cols-[2fr_1fr_1fr_1.3fr];
+} */
+
+/* Logo */
+
+/* .footer-logo {
+  @apply flex items-center gap-[15px] mb-[25px];
+} */
+
+/* .footer-logo img {
+  @apply w-[65px];
+} */
+
+/* .footer-logo h2 {
+  @apply text-[42px] m-0 font-bold;
+} */
+
+/* .footer-logo span {
+  @apply block text-red-600;
+} */
+
+/* Description */
+
+/* .footer-description {
+  @apply text-[#c9c9c9] leading-[1.8] text-[17px] mb-[30px];
+} */
+
+/* Social */
+
+/* .social-icons {
+  @apply flex gap-4;
+} */
+
+/* .social-icons a {
+  @apply w-12 h-12 rounded-full bg-red-600 flex justify-center items-center
+         text-white text-[20px] transition-all duration-300 no-underline;
+} */
+
+/* .social-icons a:hover {
+  @apply bg-white text-red-600 -translate-y-[5px];
+} */
+
+/* Columns */
+
+/* .footer-column h3 {
+  @apply text-red-500 text-[28px] mb-[25px];
+} */
+
+/* .footer-column ul {
+  @apply list-none p-0;
 }
+
+.footer-column ul li {
+  @apply mb-[18px] text-[#ddd] cursor-pointer transition-all duration-300 text-[17px];
+}
+
+.footer-column ul li:hover {
+  @apply text-red-500 pl-2;
+} */
+
+/* Contact */
+
+/* .contact-info p {
+  @apply flex items-center gap-[10px] text-[#ddd] mb-[18px] text-[17px];
+}
+
+.contact-btn {
+  @apply mt-[15px] bg-red-600 text-white border-none py-[14px] px-[35px]
+         rounded-full text-[17px] cursor-pointer transition-all duration-300;
+}
+
+.contact-btn:hover {
+  @apply bg-white text-red-600;
+} */
+
+/* Bottom */
+
+/* .footer-bottom {
+  @apply border-t border-[#222] text-center py-[25px] px-[10px];
+}
+
+.footer-bottom p {
+  @apply my-[6px] text-[#ccc] text-[15px];
+}
+
+.footer-bottom strong {
+  @apply text-white;
+}
+
+.designer {
+  @apply text-red-500;
+} */
+
+/* Responsive */
+
+/* @media (max-width: 992px) {
+  .footer-container {
+    @apply grid-cols-2 gap-10;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    @apply grid-cols-1 text-center;
+  }
+
+  .footer-logo {
+    @apply justify-center;
+  }
+
+  .social-icons {
+    @apply justify-center;
+  }
+
+  .contact-info p {
+    @apply justify-center;
+  }
+
+  .footer-column h3 {
+    @apply mt-5;
+  }
+} */
