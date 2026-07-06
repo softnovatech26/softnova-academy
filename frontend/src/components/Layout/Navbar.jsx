@@ -1,28 +1,46 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ChevronDown, BookOpen } from "lucide-react";
+import { ChevronDown, Search } from "lucide-react";
+import { courses } from "../../data/courses";
 
 function Navbar() {
+  const [isCoursesOpen, setIsCoursesOpen] = useState(false);
+  const closeTimerRef = useRef(null);
+
+  const clearCloseTimer = () => {
+    if (closeTimerRef.current) {
+      window.clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+  };
+
+  const openCoursesMenu = () => {
+    clearCloseTimer();
+    setIsCoursesOpen(true);
+  };
+
+  const closeCoursesMenu = () => {
+    clearCloseTimer();
+    closeTimerRef.current = window.setTimeout(() => setIsCoursesOpen(false), 220);
+  };
+
+  useEffect(() => () => clearCloseTimer(), []);
+
   return (
     <header className="sticky top-0 z-50 w-full bg-gray-900 shadow-lg">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-
         {/* Logo */}
-        <Link
-          to="/"
-          className="flex items-center gap-3 no-underline"
-        >
-          <img
-            src="/SoftNova Logo1-06.png"
-            alt="SoftNova Academy"
-            className="h-14 w-14 object-contain"
-          />
+        <Link to="/" className="flex items-center gap-3 no-underline">
+          <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-white/10 p-1 md:h-12 md:w-12">
+            <img
+              src="/softnovalogo (2).jpeg"
+              alt="SoftNova Academy"
+              className="h-full w-full rounded-full object-cover"
+            />
+          </div>
 
-          <h2 className="whitespace-nowrap text-2xl font-bold text-white lg:text-3xl">
-            SoftNova{" "}
-            <span className="text-red-500">
-              Academy
-            </span>
+          <h2 className="whitespace-nowrap text-[0.95rem] font-bold leading-none text-white sm:text-[1.7rem]">
+            SoftNova <span className="text-red-500">Academy</span>
           </h2>
         </Link>
 
@@ -41,11 +59,10 @@ function Navbar() {
             <li>
               <Link
                 to="/courses"
-                className="flex items-center gap-1 font-medium text-white transition hover:text-red-500"
-              >
+                className="font-medium text-white transition hover:text-red-500"
+                >
                 Courses
-                <ChevronDown size={16} />
-              </Link>
+               </Link>
             </li>
 
             <li>
@@ -86,14 +103,15 @@ function Navbar() {
           </ul>
         </nav>
 
-        {/* Register Button */}
-        <button
-          className="flex items-center gap-2 rounded-lg bg-red-600 px-5 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-red-700"
-        >
-          <BookOpen size={18} />
-          Register
-        </button>
-
+        {/* Search Bar */}
+        <div className="flex items-center rounded-full bg-white/10 px-3 py-2 text-white backdrop-blur-sm">
+          <Search size={16} className="mr-2 text-red-400" />
+          <input
+            type="text"
+            placeholder="Search"
+            className="w-24 bg-transparent text-sm outline-none placeholder:text-gray-300 sm:w-32"
+          />
+        </div>
       </div>
     </header>
   );

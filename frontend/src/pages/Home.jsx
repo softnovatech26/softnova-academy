@@ -63,11 +63,11 @@ const Home = () => {
         <div className="max-w-7xl mx-auto">
 
           {/* Section Heading */}
-          <div className="sec-heading text-center mb-6">
-            <h1 className="text-3xl sm:text-4xl font-bold text-white">
-              Start your <span className="text-red-600">learning journey</span> with us
-            </h1>
-          </div>
+         <div className="sec-heading text-center mb-6">
+  <h1 className="text-3xl sm:text-4xl font-bold text-white">
+    Start your <span className="text-red-600">learning journey</span> with us
+  </h1>
+</div>
 
           {/* All Courses Button - left aligned */}
           <div className="flex justify-start mb-12">
