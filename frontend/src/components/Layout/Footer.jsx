@@ -1,266 +1,136 @@
-import React from "react";
-import "./Footer.css";
-import {
-  FaFacebookF,
-  FaWhatsapp,
-  FaTwitter,
-  FaLinkedinIn,
-  FaGithub,
-} from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
-import { FaGlobeAsia } from "react-icons/fa";
 
+import { MdEmail } from "react-icons/md";
+
+
+import React from "react";
+import { FaFacebookF, FaTwitter, FaWhatsapp, FaInstagram, FaGithub, FaLinkedinIn, FaYoutube, FaGlobeAsia } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    // <footer className="footer">
-    //   {/* Top Wave */}
-    //   <div className="footer-wave"></div>
+    <footer className="relative bg-[#140707] text-white pt-20 pb-10 overflow-hidden">
+      {/* Background Red Glow (Right Side) */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-900/90 blur-[150px] rounded-full pointer-events-none"></div>
 
-    //   <div className="footer-container">
-    //     {/* Left Section */}
-    //     <div className="footer-column">
-    //       <div className="footer-logo">
-    //         <img src="./public/SoftNova Logo1-06.png" alt="SoftNova Academy Logo" />
+      <div className="w-[90%] max-w-[1200px] mx-auto grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-12 relative z-10">
 
-    //         <div>
-    //           <h2 className="footer-title">
-    //             SoftNova <span>Academy</span>
-    //           </h2>
-    //         </div>
-    //       </div>
+        {/* Logo Section */}
+        <div className="space-y-4">
+          <div className="flex items-center gap-3">
+            <img src="/softnovalogo (2).jpeg" alt="Logo" className="w-8 h-8 rounded-full object-cover" />
+            <h2 className="text-[20px] font-bold">SoftNova<span className="text-[#ff2d2d]"> Academy</span></h2>
+          </div>
+          <p className="text-[#a0a0a0] text-[15px] leading-relaxed">
+            We provide practicle, skill-based training to build industry-ready software development skills.
+          </p>
+          <div className="flex gap-4 pt-2">
+            <a
+              href="https://www.facebook.com/softnova.tech"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 border border-[#333] rounded-full flex items-center justify-center bg-red-700 hover:bg-[#ff2d2d] hover:border-[#ff2d2d] transition-all"
+            >
+              <FaFacebookF size={14} />
+            </a>
 
-    //       <p className="footer-description">
-    //         SoftNova Academy empowers students with industry-focused training in
-    //         Web Development, Mobile App Development, Artificial Intelligence,
-    //         UI/UX Design, and other cutting-edge technologies. We prepare future
-    //         professionals through practical learning and real-world projects.
-    //       </p>
+            <a
+              href="https://chat.whatsapp.com/K35VGX7gqWcHnsL51lWIlN"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 border border-[#333] rounded-full flex items-center justify-center bg-red-700 hover:bg-[#ff2d2d] hover:border-[#ff2d2d] transition-all"
+            >
+              <FaWhatsapp size={14} />
+            </a>
 
-    //       <div className="social-icons">
-    //         <a href="#">
-    //           <FaFacebookF />
-    //         </a>
+            <a
+              href="https://www.instagram.com/softnova.tech"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 border border-[#333] rounded-full flex items-center justify-center bg-red-700 hover:bg-[#ff2d2d] hover:border-[#ff2d2d] transition-all"
+            >
+              <FaInstagram size={14} />
+            </a>
 
-    //         <a href="#">
-    //           <FaWhatsapp />
-    //         </a>
+            <a
+              href="https://www.linkedin.com/company/soft-nova-tech/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 border border-[#333] rounded-full flex items-center justify-center bg-red-700 hover:bg-[#ff2d2d] hover:border-[#ff2d2d] transition-all"
+            >
+              <FaLinkedinIn size={14} />
+            </a>
 
-    //         <a href="#">
-    //           <FaTwitter />
-    //         </a>
+            <a
+              href="https://x.com/SoftNova94"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 border border-[#333] rounded-full flex items-center justify-center bg-red-700 hover:bg-[#ff2d2d] hover:border-[#ff2d2d] transition-all"
+            >
+              <FaTwitter size={14} />
+            </a>
+          </div>
 
-    //         <a href="#">
-    //           <FaLinkedinIn />
-    //         </a>
+        </div>
 
-    //         <a href="#">
-    //           <FaGithub />
-    //         </a>
-    //       </div>
-    //     </div>
-
-    //     {/* Courses */}
-    //     <div className="footer-column">
-    //       <h3>Courses</h3>
-
-    //       <ul>
-    //         <li>Web Development</li>
-    //         <li>Mobile App Development</li>
-    //         <li>Artificial Intelligence</li>
-    //         <li>Python Programming</li>
-    //         <li>Graphic Design</li>
-    //         <li>UI / UX Design</li>
-    //       </ul>
-    //     </div>
-
-    //     {/* Company */}
-    //     <div className="footer-column">
-    //       <h3>Company</h3>
-
-    //       <ul>
-    //         <li>Home</li>
-    //         <li>About Us</li>
-    //         <li>Courses</li>
-    //         <li>Our Trainers</li>
-    //         <li>Gallery</li>
-    //         <li>Contact</li>
-    //       </ul>
-    //     </div>
-
-    //     {/* Contact */}
-    //     <div className="footer-column">
-    //       <h3>Get in Touch</h3>
-
-    //       <div className="contact-info">
-    //         <p>
-    //           <MdEmail />
-    //           softnovaacademy.pk@gmail.com
-    //         </p>
-
-    //         <p>
-    //           <FaGlobeAsia />
-    //           Pakistan · Learn from Anywhere
-    //         </p>
-    //       </div>
-
-    //       <button className="contact-btn">
-    //         Register Now
-    //       </button>
-    //     </div>
-    //   </div>
-
-    //   {/* Bottom */}
-    //   <div className="footer-bottom">
-    //     <p>
-    //       © 2026 <strong>SoftNova Academy.</strong> All Rights Reserved.
-    //     </p>
-
-    //     <p className="designer">
-    //       Designed with ❤️ by SoftNova Academy
-    //     </p>
-    //   </div>
-    // </footer>
-
-
-
-<>
-    <footer className="bg-black text-white relative mt-20 overflow-hidden">
-
-  {/* Top Wave */}
-  <div className="h-[90px] bg-gradient-to-b from-red-600 to-red-800 [clip-path:ellipse(80%_100%_at_50%_0%)]"></div>
-
-  <div className="w-[90%] max-w-[1300px] mx-auto py-[60px] grid lg:grid-cols-[2fr_1fr_1fr_1.3fr] md:grid-cols-2 grid-cols-1 gap-[60px] md:gap-10">
-
-    {/* Left Section */}
-    <div>
-      <div className="flex items-center gap-[15px] mb-[25px] md:justify-start justify-center">
-
-        <img
-          src="/softnovalogo(2).png"
-          alt="SoftNova Academy Logo"
-          className="w-[65px]"
-        />
-
+        {/* Explore */}
         <div>
-          <h2 className="text-[42px] font-bold m-0">
-            SoftNova <span className="block text-[#ff2d2d]">Academy</span>
-          </h2>
+          <h3 className="text-lg font-semibold mb-6"> Courses</h3>
+          <ul className="space-y-4 text-[#a0a0a0] text-[15px]">
+            <li className="hover:text-[#ff2d2d] cursor-pointer">Web Development</li>
+            <li className="hover:text-[#ff2d2d] cursor-pointer">Mobile App Development</li>
+            <li className="hover:text-[#ff2d2d] cursor-pointer">Artificial Intelligence</li>
+            <li className="hover:text-[#ff2d2d] cursor-pointer">Python Programming</li>
+            <li className="hover:text-[#ff2d2d] cursor-pointer">Graphic Design</li>
+            <li className="hover:text-[#ff2d2d] cursor-pointer">UI / UX Design</li>
+          </ul>
+        </div>
+
+        {/* Categories */}
+        <div>
+          <h3 className="text-lg font-semibold mb-6">Company</h3>
+          <ul className="space-y-4 text-[#a0a0a0] text-[15px]">
+            <li className="hover:text-[#ff2d2d] cursor-pointer">Home</li>
+            <li className="hover:text-[#ff2d2d] cursor-pointer">Design</li>
+            <li className="hover:text-[#ff2d2d] cursor-pointer">Data Science</li>
+            <li className="hover:text-[#ff2d2d] cursor-pointer">Marketing</li>
+          </ul>
+        </div>
+
+        {/* Newsletter */}
+        <div>
+          <h3 className="text-lg font-semibold mb-6">Get in Touch</h3>
+
+
+          <div>
+            <p className="flex items-center gap-[10px] text-[#a0a0a0] mb-[15px] text-[15px] md:justify-start justify-center">
+              <MdEmail />
+              softnovaacademy.pk@gmail.com
+            </p>
+
+            <p className="flex items-center gap-[10px] text-[#a0a0a0] mb-[15px] text-[15px] md:justify-start justify-center">
+              <FaGlobeAsia />
+              Pakistan · Learn from Anywhere
+            </p>
+          </div>
+          <button className="mt-[10px] bg-[#ef2b2d] text-white border-none py-[10px] px-[20px] rounded-full text-[15px] cursor-pointer transition-all duration-300 hover:bg-white hover:text-[#ef2b2d]">
+            Register Now
+          </button>
+
         </div>
       </div>
 
-      <p className="text-[#c9c9c9] leading-[1.8] text-[17px] mb-[30px] md:text-left text-center">
-        SoftNova Academy empowers students with industry-focused training in
-        Web Development, Mobile App Development, Artificial Intelligence,
-        UI/UX Design, and other cutting-edge technologies. We prepare future
-        professionals through practical learning and real-world projects.
-      </p>
+      {/* Bottom Footer */}
 
-      <div className="flex gap-4 md:justify-start justify-center">
-
-        <a href="#" className="w-12 h-12 rounded-full bg-[#ef2b2d] flex justify-center items-center text-white text-[20px] transition-all duration-300 hover:bg-white hover:text-[#ef2b2d] hover:-translate-y-[5px]">
-          <FaFacebookF />
-        </a>
-
-        <a href="#" className="w-12 h-12 rounded-full bg-[#ef2b2d] flex justify-center items-center text-white text-[20px] transition-all duration-300 hover:bg-white hover:text-[#ef2b2d] hover:-translate-y-[5px]">
-          <FaWhatsapp />
-        </a>
-
-        <a
-          href="#"
-          className="w-12 h-12 rounded-full bg-[#ef2b2d] flex justify-center items-center text-white text-[20px] transition-all duration-300 hover:bg-white hover:text-[#ef2b2d] hover:-translate-y-[5px]"
-        >
-          <FaTwitter />
-        </a>
-
-        <a
-          href="#"
-          className="w-12 h-12 rounded-full bg-[#ef2b2d] flex justify-center items-center text-white text-[20px] transition-all duration-300 hover:bg-white hover:text-[#ef2b2d] hover:-translate-y-[5px]"
-        >
-          <FaLinkedinIn />
-        </a>
-
-        <a
-          href="#"
-          className="w-12 h-12 rounded-full bg-[#ef2b2d] flex justify-center items-center text-white text-[20px] transition-all duration-300 hover:bg-white hover:text-[#ef2b2d] hover:-translate-y-[5px]"
-        >
-          <FaGithub />
-        </a>
-
-      </div>
-    </div>
-
-    {/* Courses */}
-    <div className="text-center md:text-left">
-      <h3 className="text-[#ff3b3b] text-[28px] mb-[25px] md:mt-0 mt-5">
-        Courses
-      </h3>
-
-      <ul className="list-none p-0">
-        <li className="mb-[18px] text-[#ddd] cursor-pointer transition-all duration-300 text-[17px] hover:text-[#ff3b3b] hover:pl-2">Web Development</li>
-        <li className="mb-[18px] text-[#ddd] cursor-pointer transition-all duration-300 text-[17px] hover:text-[#ff3b3b] hover:pl-2">Mobile App Development</li>
-        <li className="mb-[18px] text-[#ddd] cursor-pointer transition-all duration-300 text-[17px] hover:text-[#ff3b3b] hover:pl-2">Artificial Intelligence</li>
-        <li className="mb-[18px] text-[#ddd] cursor-pointer transition-all duration-300 text-[17px] hover:text-[#ff3b3b] hover:pl-2">Python Programming</li>
-        <li className="mb-[18px] text-[#ddd] cursor-pointer transition-all duration-300 text-[17px] hover:text-[#ff3b3b] hover:pl-2">Graphic Design</li>
-        <li className="mb-[18px] text-[#ddd] cursor-pointer transition-all duration-300 text-[17px] hover:text-[#ff3b3b] hover:pl-2">UI / UX Design</li>
-      </ul>
-    </div>
-
-    {/* Company */}
-    <div className="text-center md:text-left">
-      <h3 className="text-[#ff3b3b] text-[28px] mb-[25px] md:mt-0 mt-5">
-        Company
-      </h3>
-
-      <ul className="list-none p-0">
-        <li className="mb-[18px] text-[#ddd] cursor-pointer transition-all duration-300 text-[17px] hover:text-[#ff3b3b] hover:pl-2">Home</li>
-        <li className="mb-[18px] text-[#ddd] cursor-pointer transition-all duration-300 text-[17px] hover:text-[#ff3b3b] hover:pl-2">About Us</li>
-        <li className="mb-[18px] text-[#ddd] cursor-pointer transition-all duration-300 text-[17px] hover:text-[#ff3b3b] hover:pl-2">Courses</li>
-        <li className="mb-[18px] text-[#ddd] cursor-pointer transition-all duration-300 text-[17px] hover:text-[#ff3b3b] hover:pl-2">Our Trainers</li>
-        <li className="mb-[18px] text-[#ddd] cursor-pointer transition-all duration-300 text-[17px] hover:text-[#ff3b3b] hover:pl-2">Gallery</li>
-        <li className="mb-[18px] text-[#ddd] cursor-pointer transition-all duration-300 text-[17px] hover:text-[#ff3b3b] hover:pl-2">Contact</li>
-      </ul>
-    </div>
-
-    {/* Contact */}
-    <div className="text-center md:text-left">
-      <h3 className="text-[#ff3b3b] text-[28px] mb-[25px] md:mt-0 mt-5">
-        Get in Touch
-      </h3>
-
-      <div>
-        <p className="flex items-center gap-[10px] text-[#ddd] mb-[18px] text-[17px] md:justify-start justify-center">
-          <MdEmail />
-          softnovaacademy.pk@gmail.com
+      <div className="w-[90%] max-w-[1200px] mx-auto border-t border-[#1a1a1a] mt-16 pt-8 text-center text-[#666] text-[14px]">
+        <p className="my-[6px] text-[#ccc] text-[15px]">
+          © 2026 <strong className="text-white">SoftNova Academy.</strong> All Rights Reserved.
         </p>
 
-        <p className="flex items-center gap-[10px] text-[#ddd] mb-[18px] text-[17px] md:justify-start justify-center">
-          <FaGlobeAsia />
-          Pakistan · Learn from Anywhere
+        <p className=" my-[6px] text-[15px]">
+          Designed with ❤️ by SoftNova Academy
         </p>
       </div>
 
-      <button className="mt-[15px] bg-[#ef2b2d] text-white border-none py-[14px] px-[35px] rounded-full text-[17px] cursor-pointer transition-all duration-300 hover:bg-white hover:text-[#ef2b2d]">
-        Register Now
-      </button>
-    </div>
-
-  </div>
-
-  {/* Bottom */}
-  <div className="border-t border-[#222] text-center py-[25px] px-[10px]">
-    <p className="my-[6px] text-[#ccc] text-[15px]">
-      © 2026 <strong className="text-white">SoftNova Academy.</strong> All Rights Reserved.
-    </p>
-
-    <p className="text-[#ff4b4b] my-[6px] text-[15px]">
-      Designed with ❤️ by SoftNova Academy
-    </p>
-  </div>
-
-</footer>
-</>
-
+    </footer>
   );
 };
 
