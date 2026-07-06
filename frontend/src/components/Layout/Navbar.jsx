@@ -56,38 +56,13 @@ function Navbar() {
               </Link>
             </li>
 
-            <li
-              className="relative"
-              onMouseEnter={openCoursesMenu}
-              onMouseLeave={closeCoursesMenu}
-            >
-              <button
-                type="button"
-                onClick={() => setIsCoursesOpen((prev) => !prev)}
-                className="flex items-center gap-1 font-medium text-white transition hover:text-red-500"
-              >
-                Courses
-                <ChevronDown size={16} />
-              </button>
-
-              {isCoursesOpen && (
-                <div
-                  className="absolute left-0 top-full mt-3 min-w-[220px] rounded-xl border border-white/10 bg-gray-800 p-2 shadow-xl"
-                  onMouseEnter={openCoursesMenu}
-                  onMouseLeave={closeCoursesMenu}
+            <li>
+              <Link
+                to="/courses"
+                className="font-medium text-white transition hover:text-red-500"
                 >
-                  {courses.map((course) => (
-                    <Link
-                      key={course.slug}
-                      to={`/courses/${course.slug}`}
-                      className="block rounded-lg px-3 py-2 text-sm text-gray-200 transition hover:bg-red-600 hover:text-white"
-                      onClick={() => setIsCoursesOpen(false)}
-                    >
-                      {course.title}
-                    </Link>
-                  ))}
-                </div>
-              )}
+                Courses
+               </Link>
             </li>
 
             <li>
