@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import card1_img from "../assets/images/card_1_img.png";
 import card2_img from "../assets/images/card_2_img.jpg";
 import card3_img from "../assets/images/card3.png";
@@ -37,7 +38,40 @@ const courses = [
 ];
 
 
+const steps = [
+  {
+    id: "01",
+    title: "Choose a Course",
+    description: "Browse 250+ courses across dozens of categories.",
+  },
+  {
+    id: "02",
+    title: "Learn by Doing",
+    description: "Hands-on projects and real-world assignments.",
+  },
+  {
+    id: "03",
+    title: "Get Mentored",
+    description: "Live Q&A and 1-on-1 sessions with instructors.",
+  },
+  {
+    id: "04",
+    title: "Earn Certificate",
+    description: "Complete your course and get certified.",
+  },
+  {
+    id: "05",
+    title: "Internship Opportunity",
+    description: "3-Month Internship Based on Course Progress, Skills & Class Performance.",
+  },
+];
+
+
 const Home = () => {
+
+  const navigate = useNavigate();
+
+
   // return (
   //   <main
   //     style={{
@@ -73,12 +107,12 @@ const Home = () => {
   </h1>
 </div>
 
-          {/* All Courses Button - left aligned */}
-          <div className="flex justify-start mb-12">
-            <button className="bg-transparent text-red-600 border border-red-600 px-6 py-2.5 rounded-lg text-sm sm:text-base font-semibold transition-all duration-300 hover:bg-red-600 hover:text-white hover:scale-105">
-              View all courses
-            </button>
-          </div>
+            {/* All Courses Button - left aligned */}
+            <div className="flex justify-center sm:justify-start mb-8 sm:mb-12">
+              <button  onClick={() => navigate("/courses")} className=" w-full sm:w-auto bg-transparent text-red-600 border border-red-600 px-5 py-2 sm:px-6 sm:py-2.5 rounded-lg text-xs sm:text-sm md:text-base font-semibold transition-all duration-300 hover:bg-red-600 hover:text-white hover:scale-105">
+                View all courses
+              </button>
+            </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
 
@@ -128,6 +162,46 @@ const Home = () => {
 
         </div>
       </section>
+
+
+
+   <section className="py-20">
+      <div className="max-w-7xl mx-auto px-5">
+        {/* Top Badge */}
+        <div className="flex justify-center">
+          <span className="border border-red-600 text-red-500 text-xs tracking-widest uppercase rounded-full px-5 py-2">
+            How It Works
+          </span>
+        </div>
+        {/* Heading */}
+        <h2 className="text-center text-white text-4xl md:text-5xl font-bold mt-5">
+          Your journey in 5 steps
+        </h2>
+        {/* Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mt-16">
+          {steps.map((step) => (
+            <div
+              key={step.id}
+              className="group border border-white/10 rounded-3xl p-8 bg-black hover:border-red-600 transition-all duration-300"
+            >
+              <h1 className="text-6xl font-bold text-red-900/70">
+                {step.id}
+              </h1>
+              <h3 className="text-white text-xl font-semibold mt-6">
+                {step.title}
+              </h3>
+              <p className="text-gray-400 mt-4 leading-7">
+                {step.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+
+
+
     </main>
     </div>
   );
