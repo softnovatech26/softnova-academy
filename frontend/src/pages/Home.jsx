@@ -7,6 +7,12 @@ import First_instr from "../assets/images/first_instr.jpg";
 import Second_instr from "../assets/images/second_instr.jpg";
 import Third_instr from "../assets/images/third_instr.jpg";
 import Fourth_instr from "../assets/images/fourth_instr.jpg";
+import Community_img1 from "../assets/images/community_img1.jpg";
+import Community_img2 from "../assets/images/community_img2.jpg";
+import Community_img3 from "../assets/images/community_img3.jpg";
+import Community_img4 from "../assets/images/community_img4.jpg";
+import Community_img5 from "../assets/images/community_img5.jpg";
+import Community_img6 from "../assets/images/community_img6.jpg";
 import React from "react";
 
 const courses = [
@@ -107,6 +113,15 @@ const instructors = [
   },
 ];
 
+
+const communityImages = [
+  { id: 1, src: Community_img1, alt: "Community moment 1", span: "main" },
+  { id: 2, src: Community_img2, alt: "Community moment 2", span: "normal" },
+  { id: 3, src: Community_img3, alt: "Community moment 3", span: "normal" },
+  { id: 4, src: Community_img4, alt: "Community moment 4", span: "normal" },
+  { id: 5, src: Community_img5, alt: "Community moment 5", span: "normal" },
+  { id: 6, src: Community_img6, alt: "Community moment 6", span: "wide" },
+];
 
 const Home = ( ) => {
 
@@ -232,6 +247,7 @@ const Home = ( ) => {
 
 
 
+
     {/* ===== Instructors section ===== */}
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-5">
@@ -297,6 +313,58 @@ const Home = ( ) => {
             </div>
           </div>
         </section>
+
+
+
+        {/* ===== Community Section ===== */}
+
+       <section className="community-section container py-20">
+  <div className="max-w-7xl mx-auto px-5">
+    {/* Top Badge */}
+    
+    <div className="flex justify-center mb-3">
+      <span className="bg-[oklch(0.16_0.05_15.85)] border border-red-600 text-red-500 text-xs tracking-widest uppercase rounded-full px-4 py-1 font-semibold">
+        Campus Life
+      </span>
+    </div>
+
+    {/* Heading */}
+    <h2 className="text-center text-white text-4xl md:text-5xl font-bold">
+      Moments from our <br /> community
+    </h2>
+
+    <div className="mt-12 grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-2 lg:grid-cols-6 lg:gap-2">
+      {communityImages.map((image) => {
+        const isMain = image.span === "main";
+
+        return (
+          <div
+            key={image.id}
+            className={`
+              group relative w-full overflow-hidden rounded-2xl bg-[#141414] border border-gray-800
+              ${
+                isMain
+                  ? "aspect-[4/5] sm:aspect-[16/9] lg:aspect-auto lg:col-span-2 lg:row-span-2"
+                  : "aspect-square lg:col-span-1 lg:row-span-1"
+              }
+            `}
+          >
+            <img
+              src={image.src}
+              alt={image.alt}
+              loading="lazy"
+              className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+            />
+
+            {/* Flat, uniform light-black shade on hover (not a gradient) */}
+            <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/40" />
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
 
 
     </main>
