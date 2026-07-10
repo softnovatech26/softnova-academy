@@ -1,15 +1,64 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
 function Contact() {
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+
+  const [status, setStatus] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+
+      const response = await axios.post(
+        "http://localhost:5000/api/contact",
+        formData
+      );
+
+      console.log("Backend Response:", response.data);
+
+      setStatus(response.data.message);
+
+      setFormData({
+        name: "",
+        email: "",
+        message: ""
+      });
+
+    } catch (error) {
+
+      console.log("Contact Error:", error);
+
+      setStatus(
+        "Something went wrong. Please try again."
+      );
+
+    }
+  };
+
+
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-white py-20 px-5 relative overflow-hidden">
 
-      {/* Background Red Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-red-500/40 via-transparent to-transparent pointer-events-none"></div>
 
       <section className="max-w-7xl mx-auto relative z-10">
 
-        {/* Heading */}
+
         <div className="text-center mb-16">
 
           <span className="border border-red-600 text-red-500 text-xs tracking-widest uppercase rounded-full px-5 py-2">
@@ -29,11 +78,9 @@ function Contact() {
         </div>
 
 
-        {/* Contact Section */}
         <div className="grid md:grid-cols-2 gap-10">
 
 
-          {/* Contact Information */}
           <div className="bg-[#141414] border border-gray-800 rounded-3xl p-8">
 
             <h2 className="text-2xl font-bold mb-6">
@@ -78,7 +125,6 @@ function Contact() {
 
 
 
-          {/* Contact Form */}
           <div className="bg-[#141414] border border-gray-800 rounded-3xl p-8">
 
             <h2 className="text-2xl font-bold mb-6">
@@ -86,10 +132,17 @@ function Contact() {
             </h2>
 
 
-            <form className="space-y-5">
+            <form 
+              onSubmit={handleSubmit}
+              className="space-y-5"
+            >
+
 
               <input
                 type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
                 placeholder="Your Name"
                 className="w-full bg-black border border-gray-700 rounded-lg p-3 text-white outline-none focus:border-red-600"
               />
@@ -97,6 +150,9 @@ function Contact() {
 
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="Your Email"
                 className="w-full bg-black border border-gray-700 rounded-lg p-3 text-white outline-none focus:border-red-600"
               />
@@ -104,6 +160,9 @@ function Contact() {
 
               <textarea
                 rows="5"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="Your Message"
                 className="w-full bg-black border border-gray-700 rounded-lg p-3 text-white outline-none focus:border-red-600"
               ></textarea>
@@ -116,12 +175,21 @@ function Contact() {
                 Send Message
               </button>
 
+
+              {status && (
+                <p className="text-center text-red-400 mt-3">
+                  {status}
+                </p>
+              )}
+
+
             </form>
 
           </div>
 
 
         </div>
+
 
       </section>
 
