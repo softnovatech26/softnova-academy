@@ -1,43 +1,98 @@
 import React from "react";
+import class6 from "../assets/images/class 6.jpeg";
 
 function About() {
+  const teamMembers = [
+    {
+      name: "Ali Khan",
+      role: "Senior Instructor",
+      image: "https://i.pravatar.cc/400?img=12",
+    },
+    {
+      name: "Sarah Ahmed",
+      role: "Frontend Developer",
+      image: "https://i.pravatar.cc/400?img=47",
+    },
+    {
+      name: "John Smith",
+      role: "Backend Mentor",
+      image: "https://i.pravatar.cc/400?img=33",
+    },
+    {
+      name: "Emma Wilson",
+      role: "UI/UX Designer",
+      image: "https://i.pravatar.cc/400?img=44",
+    },
+    {
+      name: "David Lee",
+      role: "Python Instructor",
+      image: "https://i.pravatar.cc/400?img=51",
+    },
+    {
+      name: "Sophia Brown",
+      role: "Career Counselor",
+      image: "https://i.pravatar.cc/400?img=49",
+    },
+  ];
+
   return (
     <main className="min-h-screen bg-[#0a0a0a] relative overflow-hidden">
+
       {/* Background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-red-600/50 via-transparent to-transparent pointer-events-none"></div>
 
+
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-16">
+
+
         {/* Heading */}
         <div className="text-center mb-16">
+
           <h1 className="text-3xl font-bold text-red-500 mb-4">
             About Us
           </h1>
+
 
           <h2 className="text-2xl font-bold text-white mb-3">
             Building the Future with SoftNova Academy
           </h2>
 
+
           <h3 className="text-4xl font-bold">
             <span className="text-white">
               Making world-class learning{" "}
             </span>
-            <span className="text-red-500">accessible</span>
+
+            <span className="text-red-500">
+              accessible
+            </span>
           </h3>
+
         </div>
 
-        {/* Content */}
+
+
+        {/* About Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Image */}
+
+
+          {/* Image */}
           <div>
+
             <img
-              src="/studygroup.jpg"
-              alt="Study Group"
+              src={class6}
+              alt="Class 6"
               className="w-full h-auto rounded-2xl shadow-lg"
             />
+
           </div>
 
-          {/* Right Description */}
+
+
+          {/* Description */}
           <div className="text-gray-300 text-lg leading-8 space-y-6">
+
+
             <p>
               SoftNova Academy is a modern learning platform dedicated to
               empowering students with industry-ready skills in software
@@ -45,6 +100,7 @@ function About() {
               learning, real-world projects, and hands-on experience that
               prepares students for professional careers.
             </p>
+
 
             <p>
               Our academy is built on a strong learning culture that prioritizes
@@ -54,15 +110,100 @@ function About() {
               competitive tech industry.
             </p>
 
+
             <p>
               At SoftNova Academy, we combine education, innovation, and
               creativity to transform beginners into skilled professionals,
               enabling them to build impactful digital careers and succeed in
               the modern tech world.
             </p>
+
+
           </div>
+
+
         </div>
+
+
+
+
+        {/* Team Section */}
+
+        <div className="mt-24">
+
+
+          <div className="text-center mb-12">
+
+
+            <h2 className="text-4xl font-bold text-white">
+              Meet Our{" "}
+              <span className="text-red-500">
+                Great Team
+              </span>
+            </h2>
+
+
+            <p className="text-gray-400 mt-4">
+              Our dedicated team is helping students build their future with technology.
+            </p>
+
+
+          </div>
+
+
+
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+
+            {teamMembers.map((member, index) => (
+
+              <div
+                key={index}
+                className="bg-[#111] rounded-2xl overflow-hidden shadow-lg hover:-translate-y-2 transition duration-300"
+              >
+
+
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-72 object-cover"
+                />
+
+
+
+                <div className="p-6 text-center">
+
+
+                  <h3 className="text-xl font-bold text-white">
+                    {member.name}
+                  </h3>
+
+
+                  <p className="text-red-500 mt-2">
+                    {member.role}
+                  </p>
+
+
+                </div>
+
+
+              </div>
+
+
+            ))}
+
+
+          </div>
+
+
+        </div>
+
+
+
       </div>
+
+
     </main>
   );
 }
