@@ -20,7 +20,7 @@ const courses = [
   {
     id: 1,
     name: "Complete HTML, CSS and JavaScript",
-    trainer: "Ali Khan",
+    trainer: "Ali Ahmmad Khan",
     category: "Web Development",
     image: card1_img,
   },
