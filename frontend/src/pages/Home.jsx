@@ -338,25 +338,16 @@ const Home = ( ) => {
         const isMain = image.span === "main";
 
         return (
-          <div
-            key={image.id}
-            className={`
+          <div key={image.id} className={`
               group relative w-full overflow-hidden rounded-2xl bg-[#141414] border border-gray-800
               ${
                 isMain
                   ? "aspect-[4/5] sm:aspect-[16/9] lg:aspect-auto lg:col-span-2 lg:row-span-2"
                   : "aspect-square lg:col-span-1 lg:row-span-1"
               }
-            `}
-          >
-            <img
-              src={image.src}
-              alt={image.alt}
-              loading="lazy"
-              className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-            />
+            `} >
+            <img src={image.src} alt={image.alt} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
 
-            {/* Flat, uniform light-black shade on hover (not a gradient) */}
             <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/40" />
           </div>
         );
