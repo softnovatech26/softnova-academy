@@ -14,6 +14,7 @@ import Community_img4 from "../assets/images/community_img4.jpg";
 import Community_img5 from "../assets/images/community_img5.jpg";
 import Community_img6 from "../assets/images/community_img6.jpg";
 import React from "react";
+import { TypeAnimation } from "react-type-animation";
 
 const courses = [
   {
@@ -386,8 +387,26 @@ return (
           </div>
 
           <h1 className="text-7xl font-bold leading-tight font-serif pr-10">
-            Skills that get you <span className="text-red-500">hired.</span>
-          </h1>
+  Skills that get you{" "}
+  <span className="text-red-500">
+    <TypeAnimation
+      sequence={[
+        "hired.",
+        2000,
+        "job-ready.",
+        2000,
+        "future-ready.",
+        2000,
+        "successful.",
+        2000,
+      ]}
+      wrapper="span"
+      speed={50}
+      repeat={Infinity}
+      cursor={true}
+    />
+  </span>
+</h1>
 
           <p className="text-gray-400 text-lg max-w-md">
             Join 100,000+ learners mastering web development, design, data & business with courses taught by industry-leading professionals.
