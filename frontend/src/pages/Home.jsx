@@ -8,7 +8,7 @@ import Second_instr from "../assets/images/second_instr.jpg";
 import Third_instr from "../assets/images/third_instr.jpg";
 import Fourth_instr from "../assets/images/fourth_instr.jpg";
 import Community_img1 from "../assets/images/class 1.jpeg";
-import Community_img2 from "../assets/images/class 2.jpeg";
+import Community_img2 from "../assets/images/Class 2.jpeg";
 import Community_img3 from "../assets/images/class 3.jpeg";
 import Community_img4 from "../assets/images/class 4.jpeg";
 import Community_img5 from "../assets/images/class 5.jpeg";
