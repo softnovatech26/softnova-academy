@@ -1,37 +1,43 @@
 import React from "react";
 import class6 from "../assets/images/class 6.jpeg";
-
+import haseeb from "../assets/images/haseeb .jpeg";
+import khadeeja from "../assets/images/khadeja .jpeg";
+import Areeba from "../assets/images/Areeba.jpeg";
+import Hira from "../assets/images/Hira.jpeg";
+import Seema from "../assets/images/Seema.jpeg";
+import iqra from "../assets/images/Iqra.jpeg";
 function About() {
   const teamMembers = [
     {
-      name: "Ali Khan",
-      role: "Senior Instructor",
-      image: "https://i.pravatar.cc/400?img=12",
+      name: "Haseeb UL Hassan ",
+      role: "Founder & CEO",
+      image: haseeb,
     },
     {
-      name: "Sarah Ahmed",
-      role: "Frontend Developer",
-      image: "https://i.pravatar.cc/400?img=47",
+      name: "Khadeeja Zafer ",
+      role: "HR & Marketing Manager",
+      image: khadeeja,
     },
     {
-      name: "John Smith",
-      role: "Backend Mentor",
-      image: "https://i.pravatar.cc/400?img=33",
+      name: "Areeba",
+      role: "Senior Web Developer",
+      image: Areeba,
     },
     {
-      name: "Emma Wilson",
-      role: "UI/UX Designer",
-      image: "https://i.pravatar.cc/400?img=44",
+      name: "Hira Rajput",
+      role: "Marketing Executive",
+      image: Hira,
     },
     {
-      name: "David Lee",
-      role: "Python Instructor",
-      image: "https://i.pravatar.cc/400?img=51",
+      name: "Seema Sibyani",
+      role: "Marketing Executive",
+      image: Seema,
     },
     {
-      name: "Sophia Brown",
-      role: "Career Counselor",
-      image: "https://i.pravatar.cc/400?img=49",
+      
+      name: "Iqra Bano ",
+      role: "Marketing Executive",
+      image: iqra,
     },
   ];
 

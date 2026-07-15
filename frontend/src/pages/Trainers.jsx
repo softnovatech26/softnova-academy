@@ -1,23 +1,24 @@
 import React from "react";
-
+import Bhavish from "../assets/images/Bhavish .jpeg";
+import areeba from "../assets/images/Areeba.jpeg";
 const trainersData = [
   {
     id: 1,
-    name: "Sara Martin",
-    role: "Senior Frontend Engineer",
-    image: "/teacher1.jfif",
-    description: "10+ years shipping React apps at scale. Ex-Meta.",
-    courses: 12,
-    students: 48000,
+    name: "Bhavish Kumar",
+    role: "AI & React instructor",
+    image: Bhavish,
+    description: "2+ years AI and React development experience.",
+    courses: 2,
+    students: 300,
   },
   {
     id: 2,
-    name: "Daniel Cho",
-    role: "Product Designer",
-    image: "/teacher2.jfif",
-    description: "Design lead building interfaces for millions of users.",
-    courses: 8,
-    students: 32000,
+    name: "Areeba",
+    role: "React Native Instructor",
+    image: areeba,
+    description: "3+ years of experience in mobile app development with React Native.",
+    courses: 1,
+    students: 400,
   },
   {
     id: 3,
