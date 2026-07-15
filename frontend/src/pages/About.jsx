@@ -20,7 +20,7 @@ function About() {
     },
     {
       name: "Areeba",
-      role: "Senior Web Developer",
+      role: "Web Team Leader",
       image: Areeba,
     },
     {
