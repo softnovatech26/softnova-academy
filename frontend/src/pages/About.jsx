@@ -1,3 +1,4 @@
+import Marquee from "react-fast-marquee";
 import React from "react";
 import class6 from "../assets/images/class 6.jpeg";
 import haseeb from "../assets/images/haseeb .jpeg";
@@ -75,139 +76,91 @@ function About() {
           </h3>
 
         </div>
+{/* About Content */}
+<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
 
+  <div>
+    <img
+      src={class6}
+      alt="Class 6"
+      className="w-full h-[450px] object-cover rounded-2xl shadow-lg"
+    />
+  </div>
 
+  <div className="text-gray-300 text-lg leading-8 space-y-6">
+    <p>
+      SoftNova Academy is a modern learning platform dedicated to empowering
+      students with industry-ready skills in software development and digital
+      technologies.
+    </p>
 
-        {/* About Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <p>
+      Our academy focuses on practical learning, real-world projects and
+      hands-on experience that prepares students for professional careers.
+    </p>
 
+    <p>
+      At SoftNova Academy, we combine education, innovation and creativity to
+      transform beginners into skilled professionals.
+    </p>
+  </div>
 
-          {/* Image */}
-          <div>
+</div>
 
-            <img
-              src={class6}
-              alt="Class 6"
-              className="w-full h-auto rounded-2xl shadow-lg"
-            />
+{/* Team Section */}
+<div className="text-center mb-12">
 
-          </div>
+  <h2 className="text-4xl font-bold text-white">
+    Meet Our <span className="text-red-500">Great Team</span>
+  </h2>
 
+  <p className="text-gray-400 mt-4">
+    Our dedicated team is helping students build their future with technology.
+  </p>
 
+</div>
+<Marquee
+  speed={40}
+  pauseOnHover={true}
+  gradient={false}
+  className="py-4"
+>
+  {teamMembers.map((member, index) => (
+    <div
+      key={index}
+      className="w-80 mx-4 bg-[#111] rounded-2xl overflow-hidden shadow-lg hover:-translate-y-2 transition duration-300"
+    >
+      <img
+        src={member.image}
+        alt={member.name}
+        className="w-full h-80 object-cover object-top"
+      />
 
-          {/* Description */}
-          <div className="text-gray-300 text-lg leading-8 space-y-6">
+      <div className="p-6 text-center">
+        <h3 className="text-xl font-bold text-white">
+          {member.name}
+        </h3>
 
-
-            <p>
-              SoftNova Academy is a modern learning platform dedicated to
-              empowering students with industry-ready skills in software
-              development and digital technologies. We focus on practical
-              learning, real-world projects, and hands-on experience that
-              prepares students for professional careers.
-            </p>
-
-
-            <p>
-              Our academy is built on a strong learning culture that prioritizes
-              skill development, performance, and innovation. We specialize in
-              teaching modern web development, programming fundamentals, and
-              advanced digital solutions that help students grow in today's
-              competitive tech industry.
-            </p>
-
-
-            <p>
-              At SoftNova Academy, we combine education, innovation, and
-              creativity to transform beginners into skilled professionals,
-              enabling them to build impactful digital careers and succeed in
-              the modern tech world.
-            </p>
-
-
-          </div>
-
-
-        </div>
-
-
-
-
-        {/* Team Section */}
-
-        <div className="mt-24">
-
-
-          <div className="text-center mb-12">
-
-
-            <h2 className="text-4xl font-bold text-white">
-              Meet Our{" "}
-              <span className="text-red-500">
-                Great Team
-              </span>
-            </h2>
-
-
-            <p className="text-gray-400 mt-4">
-              Our dedicated team is helping students build their future with technology.
-            </p>
-
-
-          </div>
-
-
-
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-
-            {teamMembers.map((member, index) => (
-
-              <div
-                key={index}
-                className="bg-[#111] rounded-2xl overflow-hidden shadow-lg hover:-translate-y-2 transition duration-300"
-              >
-
-
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-72 object-cover"
-                />
-
-
-
-                <div className="p-6 text-center">
-
-
-                  <h3 className="text-xl font-bold text-white">
-                    {member.name}
-                  </h3>
-
-
-                  <p className="text-red-500 mt-2">
-                    {member.role}
-                  </p>
-
-
-                </div>
-
-
-              </div>
-
-
-            ))}
-
-
-          </div>
-
-
-        </div>
-
-
-
+        <p className="text-red-500 mt-2">
+          {member.role}
+        </p>
       </div>
+    </div>
+  ))}
+</Marquee>
+
+
+      
+
+
+
+
+          </div>
+
+
+
+
+
 
 
     </main>
