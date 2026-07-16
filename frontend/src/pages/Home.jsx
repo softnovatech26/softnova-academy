@@ -8,7 +8,7 @@ import Second_instr from "../assets/images/second_instr.jpg";
 import Third_instr from "../assets/images/third_instr.jpg";
 import Fourth_instr from "../assets/images/fourth_instr.jpg";
 import Community_img1 from "../assets/images/class 1.jpeg";
-import Community_img2 from "../assets/images/Class 2.jpeg";
+import Community_img2 from "../assets/images/class 2.jpeg";
 import Community_img3 from "../assets/images/class 3.jpeg";
 import Community_img4 from "../assets/images/class 4.jpeg";
 import Community_img5 from "../assets/images/class 5.jpeg";
@@ -365,111 +365,124 @@ export default Home;
 
 function Herosection() {
   return (
- <main className="min-h-screen bg-[#0a0a0a] flex items-center justify-center p-8">
+ <main className="min-h-screen bg-[#0a0a0a] flex items-center justify-center p-4 md:p-8">
 
   <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-red-500/60 via-transparent to-transparent pointer-events-none" />
 
   <div className="max-w-6xl w-full z-10">
 
-    {/* Welcome Animation */}
-    <div className="mb-2">
-
-      <h2 className="leading-tight">
-
-        <span className="block text-white text-4xl md:text-5xl font-bold">
-          <TypeAnimation
-            sequence={[
-              "Welcome To SoftNova",
-              2000,
-            ]}
-            wrapper="span"
-            speed={50}
-            repeat={Infinity}
-            cursor={false}
-          />
-        </span>
-
-        <span className="block text-red-500 text-5xl md:text-6xl font-extrabold mt-2">
-          <TypeAnimation
-            sequence={[
-              700,
-              "Academy",
-              2000,
-            ]}
-            wrapper="span"
-            speed={50}
-            repeat={Infinity}
-            cursor={true}
-          />
-        </span>
-
-      </h2>
-
-    </div>
-
     {/* Hero Section */}
-    <div className="flex flex-col md:flex-row items-center gap-15 pt-15">
+    <div className="flex flex-col">
 
-      {/* Left Side */}
-      <div className="flex-1 text-white space-y-6">
+      {/* Welcome Animation */}
+      <div className="animation-div">
+        <h2 className="leading-tight">
+          <span className="block text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
+            <TypeAnimation
+              sequence={["Welcome To SoftNova", 2000]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
+              cursor={false}
+            />
+          </span>
 
-        <h1 className="text-7xl font-bold leading-tight font-serif pr-10">
-          Skills that get you{" "}
-          <span className="text-red-500">
+          <span className="block text-red-500 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mt-2">
             <TypeAnimation
               sequence={[
-                "hired.",
+                "Academy",
                 2000,
-                "job-ready.",
-                2000,
-                "future-ready.",
-                2000,
-                "successful.",
-                2000,
+                "",
+                500,
               ]}
               wrapper="span"
               speed={50}
+              deletionSpeed={65}
               repeat={Infinity}
               cursor={true}
             />
           </span>
-        </h1>
-
-        <div className="flex gap-8 pt-8">
-          <div>
-            <div className="text-2xl font-bold">15+</div>
-            <div className="text-gray-500 text-sm">COURSES</div>
-          </div>
-
-          <div>
-            <div className="text-2xl font-bold">100K+</div>
-            <div className="text-gray-500 text-sm">STUDENTS</div>
-          </div>
-
-          <div>
-            <div className="text-2xl font-bold">4.9 ★</div>
-            <div className="text-gray-500 text-sm">AVG. RATING</div>
-          </div>
-        </div>
-
+        </h2>
       </div>
 
-      {/* Right Side */}
-      <div className="flex-1 relative">
+      <div className="flex flex-col md:flex-row items-center">
 
-        <img
-          src="/hero.jpg"
-          alt="Students collaborating"
-          className="rounded-3xl shadow-2xl w-full h-[500px] object-cover"
-        />
+        {/* Left Side */}
+        <div className="flex-1 w-full text-white space-y-4 sm:space-y-6">
 
-        <div className="absolute top-6 left-5 bg-red-900/10 backdrop-blur p-4 rounded-xl border border-gray-700 flex items-center gap-3">
-          <div className="bg-red-500 p-3 rounded-full text-xs">★</div>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight font-serif pr-0 md:pr-10">
+            Skills that{" "}
+            <span className="text-white">
+              <TypeAnimation
+                sequence={[
+                  "get you",
+                  2000,
+                  "",
+                  500,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+                cursor={false}
+              />
+            </span>{" "}
+            <span className="text-red-500">
+              <TypeAnimation
+                sequence={[
+                  "hired.",
+                  2000,
+                  "job-ready.",
+                  2000,
+                  "future-ready.",
+                  2000,
+                  "successful.",
+                  2000,
+                ]}
+                wrapper="span"
+                speed={49}
+                repeat={Infinity}
+                cursor={true}
+              />
+            </span>
+          </h1>
 
-          <div>
-            <div className="font-bold text-white">4.9 / 5</div>
-            <div className="text-gray-400 text-xs">from 28k reviews</div>
+          <div className="flex flex-wrap gap-4 sm:gap-6 md:gap-8 pt-4 sm:pt-6 md:pt-8">
+            <div>
+              <div className="text-xl sm:text-2xl font-bold">15+</div>
+              <div className="text-gray-500 text-xs sm:text-sm">COURSES</div>
+            </div>
+
+            <div>
+              <div className="text-xl sm:text-2xl font-bold">100K+</div>
+              <div className="text-gray-500 text-xs sm:text-sm">STUDENTS</div>
+            </div>
+
+            <div>
+              <div className="text-xl sm:text-2xl font-bold">4.9 ★</div>
+              <div className="text-gray-500 text-xs sm:text-sm">AVG. RATING</div>
+            </div>
           </div>
+
+        </div>
+
+        {/* Right Side */}
+        <div className="flex-1 w-full relative pt-2 sm:pt-1">
+
+          <img
+            src="/hero.jpg"
+            alt="Students collaborating"
+            className="rounded-2xl sm:rounded-3xl shadow-2xl w-full h-[260px] sm:h-[360px] md:h-[420px] lg:h-[500px] object-cover"
+          />
+
+          <div className="absolute top-3 left-3 sm:top-4 sm:left-4 md:top-6 md:left-5 bg-red-900/10 backdrop-blur p-2.5 sm:p-3 md:p-4 rounded-lg sm:rounded-xl border border-gray-700 flex items-center gap-2 sm:gap-3">
+            <div className="bg-red-500 p-2 sm:p-3 rounded-full text-xs">★</div>
+
+            <div>
+              <div className="font-bold text-white text-sm sm:text-base">4.9 / 5</div>
+              <div className="text-gray-400 text-[10px] sm:text-xs">from 28k reviews</div>
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -478,6 +491,5 @@ function Herosection() {
 
   </div>
 
-</main>
-  );
+</main>  );
 }
