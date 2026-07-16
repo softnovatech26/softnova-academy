@@ -1,6 +1,6 @@
 import React from "react";
 import Bhavish from "../assets/images/Bhavish .jpeg";
-import areeba from "../assets/images/Areeba.jpeg";
+import areeba from "../assets/images/Areeba.jpg";
 const trainersData = [
   {
     id: 1,
