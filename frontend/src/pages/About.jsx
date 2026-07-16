@@ -20,7 +20,7 @@ function About() {
       image: haseeb,
     },
     {
-      name: "Khadeeja Zafer",
+      name: "Khadeeja Zafar",
       role: "HR & Marketing Manager",
       image: khadeeja,
     },
