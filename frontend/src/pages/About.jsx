@@ -3,16 +3,14 @@ import React from "react";
 
 import class6 from "../assets/images/class 6.jpeg";
 import haseeb from "../assets/images/haseeb .jpeg";
-import khadeeja from "../assets/images/khadeja .jpeg";
-import Areeba from "../assets/images/Areeba.jpeg";
-import Hira from "../assets/images/Hira.jpeg";
-import Seema from "../assets/images/Seema.jpeg";
+import khadeeja from "../assets/images/khadeja.jpg";
+import Hira from "../assets/images/Hira.jpg";
+import Seema from "../assets/images/Seema.jpg";
 import iqra from "../assets/images/Iqra.jpeg";
+import Aree from "../assets/images/Areeba.jpg";
 
 import ourMission from "../assets/images/our mission.avif";
 import ourVision from "../assets/images/our vission.webp";
-
-
 function About() {
 
   const teamMembers = [
@@ -29,7 +27,7 @@ function About() {
     {
       name: "Areeba",
       role: "Web Team Leader",
-      image: Areeba,
+      image: Aree,
     },
     {
       name: "Hira Rajput",
