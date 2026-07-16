@@ -56,21 +56,39 @@ function Contact() {
 
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-red-500/40 via-transparent to-transparent pointer-events-none"></div>
 
+
       <section className="max-w-7xl mx-auto relative z-10">
 
 
-        <div className="text-center mb-16">
+        <div
+          className="text-center mb-16"
+          data-aos="zoom-in"
+          data-aos-duration="1500"
+        >
 
-          <span className="border border-red-600 text-red-500 text-xs tracking-widest uppercase rounded-full px-5 py-2">
+          <span
+            className="border border-red-600 text-red-500 text-xs tracking-widest uppercase rounded-full px-5 py-2"
+            data-aos="fade-down"
+          >
             Contact Us
           </span>
 
-          <h1 className="text-4xl md:text-6xl font-bold mt-6">
+
+          <h1
+            className="text-4xl md:text-6xl font-bold mt-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             Get in touch with{" "}
             <span className="text-red-500">SoftNova</span>
           </h1>
 
-          <p className="text-gray-400 max-w-2xl mx-auto mt-5">
+
+          <p
+            className="text-gray-400 max-w-2xl mx-auto mt-5"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
             Have questions about our courses, internships, or programs?
             Contact our team and we will help you.
           </p>
@@ -78,10 +96,15 @@ function Contact() {
         </div>
 
 
+
         <div className="grid md:grid-cols-2 gap-10">
 
 
-          <div className="bg-[#141414] border border-gray-800 rounded-3xl p-8">
+          <div
+            className="bg-[#141414] border border-gray-800 rounded-3xl p-8"
+            data-aos="fade-right"
+            data-aos-duration="1500"
+          >
 
             <h2 className="text-2xl font-bold mb-6">
               Contact Information
@@ -90,7 +113,12 @@ function Contact() {
 
             <div className="space-y-5">
 
-              <div className="border border-gray-800 rounded-xl p-5">
+
+              <div
+                className="border border-gray-800 rounded-xl p-5"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
                 <h3 className="text-red-500 font-semibold">
                   Email
                 </h3>
@@ -100,7 +128,12 @@ function Contact() {
               </div>
 
 
-              <div className="border border-gray-800 rounded-xl p-5">
+
+              <div
+                className="border border-gray-800 rounded-xl p-5"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
                 <h3 className="text-red-500 font-semibold">
                   Phone
                 </h3>
@@ -110,7 +143,13 @@ function Contact() {
               </div>
 
 
-              <div className="border border-gray-800 rounded-xl p-5">
+
+
+              <div
+                className="border border-gray-800 rounded-xl p-5"
+                data-aos="fade-up"
+                data-aos-delay="600"
+              >
                 <h3 className="text-red-500 font-semibold">
                   Address
                 </h3>
@@ -119,26 +158,38 @@ function Contact() {
                 </p>
               </div>
 
+
             </div>
 
           </div>
 
 
 
-          <div className="bg-[#141414] border border-gray-800 rounded-3xl p-8">
 
-            <h2 className="text-2xl font-bold mb-6">
+
+          <div
+            className="bg-[#141414] border border-gray-800 rounded-3xl p-8"
+            data-aos="fade-left"
+            data-aos-duration="1500"
+          >
+
+            <h2
+              className="text-2xl font-bold mb-6"
+              data-aos="zoom-in"
+            >
               Send Message
             </h2>
 
 
-            <form 
+
+            <form
               onSubmit={handleSubmit}
               className="space-y-5"
             >
 
 
               <input
+                data-aos="fade-up"
                 type="text"
                 name="name"
                 value={formData.name}
@@ -148,7 +199,10 @@ function Contact() {
               />
 
 
+
               <input
+                data-aos="fade-up"
+                data-aos-delay="200"
                 type="email"
                 name="email"
                 value={formData.email}
@@ -158,7 +212,10 @@ function Contact() {
               />
 
 
+
               <textarea
+                data-aos="fade-up"
+                data-aos-delay="400"
                 rows="5"
                 name="message"
                 value={formData.message}
@@ -168,12 +225,16 @@ function Contact() {
               ></textarea>
 
 
+
               <button
+                data-aos="zoom-in"
+                data-aos-delay="600"
                 type="submit"
                 className="w-full bg-red-600 py-3 rounded-lg font-semibold hover:bg-red-700 transition"
               >
                 Send Message
               </button>
+
 
 
               {status && (
@@ -185,6 +246,7 @@ function Contact() {
 
             </form>
 
+
           </div>
 
 
@@ -192,6 +254,7 @@ function Contact() {
 
 
       </section>
+
 
     </main>
   );

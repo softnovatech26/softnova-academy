@@ -1,23 +1,27 @@
 import React from "react";
 
+import Bhavish from "../assets/images/Bhavish .jpeg";
+import areeba from "../assets/images/Areeba.jpg";
+
+
 const trainersData = [
   {
     id: 1,
-    name: "Sara Martin",
-    role: "Senior Frontend Engineer",
-    image: "/teacher1.jfif",
-    description: "10+ years shipping React apps at scale. Ex-Meta.",
-    courses: 12,
-    students: 48000,
+    name: "Bhavish Kumar",
+    role: "AI & React instructor",
+    image: Bhavish,
+    description: "2+ years AI and React development experience.",
+    courses: 2,
+    students: 300,
   },
   {
     id: 2,
-    name: "Daniel Cho",
-    role: "Product Designer",
-    image: "/teacher2.jfif",
-    description: "Design lead building interfaces for millions of users.",
-    courses: 8,
-    students: 32000,
+    name: "Areeba",
+    role: "React Native Instructor",
+    image: areeba,
+    description: "3+ years of experience in mobile app development with React Native.",
+    courses: 1,
+    students: 400,
   },
   {
     id: 3,
@@ -37,7 +41,6 @@ const trainersData = [
     courses: 5,
     students: 22000,
   },
-
   {
     id: 5,
     name: "Emily Johnson",
@@ -76,57 +79,119 @@ const trainersData = [
   },
 ];
 
+
 function Trainers() {
+
   return (
+
     <main className="min-h-screen bg-[#0a0a0a] relative overflow-hidden py-16">
 
+
       {/* Background */}
+
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-red-500/60 via-transparent to-transparent pointer-events-none" />
+
+
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
 
+
+
         {/* Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
+
+        <div
+          className="text-center mb-16"
+          data-aos="zoom-in"
+          data-aos-duration="1500"
+        >
+
+          <h2
+            className="text-4xl md:text-5xl font-bold text-white"
+            data-aos="fade-down"
+          >
             Our <span className="text-red-500">Trainers</span>
           </h2>
 
-          <p className="text-gray-400 text-lg mt-6">
+
+          <p
+            className="text-gray-400 text-lg mt-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
             Learn from practitioners at top companies — not academics teaching theory.
           </p>
+
+
         </div>
+
+
+
 
 
         {/* Sub Heading */}
-        <div className="text-center mb-12">
 
-          <h1 className="text-sm md:text-base font-semibold text-red-500">
+        <div
+          className="text-center mb-12"
+          data-aos="fade-up"
+          data-aos-duration="1200"
+        >
+
+          <h1
+            className="text-sm md:text-base font-semibold text-red-500"
+            data-aos="fade-down"
+          >
             Meet the instructors
           </h1>
 
-          <p className="text-white text-3xl md:text-4xl font-bold tracking-tight italic mt-4">
+
+          <p
+            className="text-white text-3xl md:text-4xl font-bold tracking-tight italic mt-4"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
             Learn from working professionals
           </p>
 
-          <p className="text-gray-300 text-lg mt-4">
+
+          <p
+            className="text-gray-300 text-lg mt-4"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
             Practitioners at top companies who teach what they actually ship.
           </p>
+
 
         </div>
 
 
+
+
+
+
         {/* Trainers Grid */}
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-          {trainersData.map((trainer) => (
+
+          {trainersData.map((trainer,index)=>(
+
 
             <div
               key={trainer.id}
+              data-aos="fade-up"
+              data-aos-delay={index * 150}
               className="group bg-gray-900/50 backdrop-blur border border-gray-800 rounded-2xl overflow-hidden hover:border-red-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-red-500/20"
             >
 
+
+
               {/* Image */}
-              <div className="relative h-56 overflow-hidden bg-gray-800">
+
+              <div
+                className="relative h-56 overflow-hidden bg-gray-800"
+                data-aos="zoom-in"
+              >
 
                 <img
                   src={trainer.image}
@@ -134,13 +199,25 @@ function Trainers() {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
 
+
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+
 
               </div>
 
 
+
+
+
+
               {/* Content */}
-              <div className="p-6">
+
+              <div
+                className="p-6"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+
 
                 <h3 className="text-xl font-bold text-white mb-1 group-hover:text-red-500 transition-colors">
                   {trainer.name}
@@ -157,9 +234,12 @@ function Trainers() {
                 </p>
 
 
+
                 <div className="pt-6 border-t border-gray-800">
 
+
                   <div className="flex justify-between text-sm">
+
 
                     <p className="text-gray-400">
                       {trainer.courses} courses
@@ -170,23 +250,33 @@ function Trainers() {
                       {trainer.students.toLocaleString()} students
                     </p>
 
+
                   </div>
+
 
                 </div>
 
 
               </div>
 
+
             </div>
+
 
           ))}
 
+
         </div>
+
 
       </div>
 
+
     </main>
+
   );
+
 }
+
 
 export default Trainers;
