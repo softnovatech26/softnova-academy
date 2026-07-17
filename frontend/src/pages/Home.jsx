@@ -448,7 +448,7 @@ function Herosection() {
 
           <div className="flex flex-wrap gap-4 sm:gap-6 md:gap-8 pt-4 sm:pt-6 md:pt-8">
             <div>
-              <div className="text-xl sm:text-2xl font-bold">15+</div>
+              <div className="text-xl sm:text-2xl font-bold">10+</div>
               <div className="text-gray-500 text-xs sm:text-sm">COURSES</div>
             </div>
 

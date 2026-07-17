@@ -6,7 +6,7 @@ import haseeb from "../assets/images/haseeb .jpeg";
 import khadeeja from "../assets/images/khadeja.jpg";
 import Hira from "../assets/images/Hira.jpg";
 import Seema from "../assets/images/Seema.jpg";
-import iqra from "../assets/images/Iqra.jpeg";
+import iqra from "../assets/images/Iqra.jpg";
 import Aree from "../assets/images/Areeba.jpg";
 
 import ourMission from "../assets/images/our mission.avif";

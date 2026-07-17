@@ -2,6 +2,7 @@ import React from "react";
 
 import Bhavish from "../assets/images/Bhavish .jpeg";
 import areeba from "../assets/images/Areeba.jpg";
+import Sammad from "../assets/images/sammad.jpeg";
 
 
 const trainersData = [
@@ -25,12 +26,12 @@ const trainersData = [
   },
   {
     id: 3,
-    name: "Amelia Rossi",
-    role: "Data Scientist",
-    image: "/teacher3.jfif",
-    description: "PhD in ML, working on applied AI for healthcare.",
-    courses: 6,
-    students: 41000,
+    name: "Sammad UL Hassan",
+    role: "React JS instructor",
+    image: Sammad,
+    description: "1+ years of experience in web development with React JS.",
+    courses: 1,
+    students: 80,
   },
   {
     id: 4,
