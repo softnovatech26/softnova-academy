@@ -261,3 +261,61 @@ function Contact() {
 }
 
 export default Contact;
+
+
+
+
+
+          //   {/* ✅ FIXED VISIT SECTION */}
+          //   <div className="group relative rounded-3xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-xl shadow-xl transform transition duration-500 hover:-translate-y-4 hover:shadow-red-900/40 p-6">
+          //     <h3 className="text-xl font-semibold mb-2">Visit Us</h3>
+
+          //     <a
+          //       href="https://maps.google.com/?q=Sindh,Pakistan"
+          //       target="_blank"
+          //       rel="noreferrer"
+          //       className="text-red-600 hover:underline block"
+          //     >
+               
+          //     </a>
+
+          //     <a
+          //       href="https://www.facebook.com/softnova.tech"
+          //       target="_blank"
+          //       rel="noreferrer"
+          //       className="text-red-600 hover:underline block"
+          //     >
+          //       Facebook
+          //     </a>
+
+          //     <a
+          //       href="https://www.instagram.com/softnova.tech"
+          //       target="_blank"
+          //       rel="noreferrer"
+          //       className="text-red-600 hover:underline block"
+          //     >
+          //       Instagram
+          //     </a>
+
+          //     <a
+          //       href="https://www.linkedin.com/company/soft-nova-tech"
+          //       target="_blank"
+          //       rel="noreferrer"
+          //       className="text-red-600 hover:underline block"
+          //     >
+          //       LinkedIn
+          //     </a>
+
+          //     <a
+          //       href="https://x.com/SoftNova94"
+          //       target="_blank"
+          //       rel="noreferrer"
+          //       className="text-red-600 hover:underline block"
+          //     >
+          //       Twitter
+          //     </a>
+
+          //     <div>SoftNova Tech Based_Islamabad, Punjab,Pakistan</div>
+          //   </div>
+
+          // </div>
