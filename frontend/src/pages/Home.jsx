@@ -1,3 +1,5 @@
+import { useRef, useState } from "react";
+import { useInView } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import card1_img from "../assets/images/card_1_img.png";
 import card2_img from "../assets/images/card_2_img.jpg";
@@ -145,6 +147,15 @@ const communityImages = [
 
 const Home = () => {
   const navigate = useNavigate();
+  const headingRef = useRef(null);
+
+  const isInView = useInView(headingRef, {
+    once: true,
+    amount: 0.4,
+  });
+
+  const [showJourney, setShowJourney] = useState(false);
+  const [showRest, setShowRest] = useState(false);
 
   return (
     <div>
@@ -154,9 +165,46 @@ const Home = () => {
         <section className="cards">
           <div className="max-w-7xl mx-auto">
             <div className="sec-heading text-center mb-6">
-              <h1 className="text-3xl sm:text-4xl font-bold text-white">
-                Start your <span className="text-red-600">learning journey</span> with us
+
+
+              <h1 ref={headingRef} className="text-3xl sm:text-4xl font-bold text-white">
+                {isInView && (
+                  <>
+                    <TypeAnimation
+                      sequence={[
+                        "Start your ",
+                        () => setShowJourney(true),
+                      ]}
+                      speed={50}
+                      cursor={false}
+                      repeat={0}
+                      wrapper="span" />
+
+                    {showJourney && (
+                      <TypeAnimation
+                        sequence={[
+                          "learning journey",
+                          () => setShowRest(true),
+                        ]}
+                        speed={50}
+                        cursor={false}
+                        repeat={0}
+                        wrapper="span"
+                        className="text-red-600" />
+                    )}
+
+                    {showRest && (
+                      <TypeAnimation
+                        sequence={[" with us"]}
+                        speed={50}
+                        cursor={false}
+                        repeat={0}
+                        wrapper="span" />
+                    )}
+                  </>
+                )}
               </h1>
+
             </div>
 
             <div className="flex justify-center sm:justify-start mb-8 sm:mb-12">
@@ -295,8 +343,7 @@ const Home = () => {
                   src={communityImages[0].src}
                   alt={communityImages[0].alt}
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                />
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
                 <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/40" />
               </div>
               <div className="lg:col-start-2 lg:row-start-1 overflow-hidden rounded-2xl bg-[#141414] border border-gray-800 group relative">
@@ -304,8 +351,7 @@ const Home = () => {
                   src={communityImages[1].src}
                   alt={communityImages[1].alt}
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                />
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
                 <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/40" />
               </div>
               <div className="lg:col-start-2 lg:row-start-2 overflow-hidden rounded-2xl bg-[#141414] border border-gray-800 group relative">
@@ -313,8 +359,7 @@ const Home = () => {
                   src={communityImages[2].src}
                   alt={communityImages[2].alt}
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                />
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
                 <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/40" />
               </div>
               <div className="hidden lg:block lg:col-start-3 lg:row-start-1 overflow-hidden rounded-2xl bg-[#141414] border border-gray-800 group relative">
@@ -322,8 +367,7 @@ const Home = () => {
                   src={communityImages[3].src}
                   alt={communityImages[3].alt}
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                />
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
                 <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/40" />
               </div>
               <div className="hidden lg:block lg:col-start-3 lg:row-start-2 overflow-hidden rounded-2xl bg-[#141414] border border-gray-800 group relative">
@@ -331,8 +375,7 @@ const Home = () => {
                   src={communityImages[4].src}
                   alt={communityImages[4].alt}
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                />
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
                 <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/40" />
               </div>
               <div className="lg:hidden overflow-hidden rounded-2xl bg-[#141414] border border-gray-800 group relative">
@@ -340,8 +383,7 @@ const Home = () => {
                   src={communityImages[3].src}
                   alt={communityImages[3].alt}
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                />
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
                 <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/40" />
               </div>
               <div className="lg:hidden overflow-hidden rounded-2xl bg-[#141414] border border-gray-800 group relative">
@@ -349,8 +391,7 @@ const Home = () => {
                   src={communityImages[4].src}
                   alt={communityImages[4].alt}
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                />
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
                 <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/40" />
               </div>
             </div>
@@ -365,131 +406,123 @@ export default Home;
 
 function Herosection() {
   return (
- <main className="min-h-screen bg-[#0a0a0a] flex items-center justify-center p-4 md:p-8">
+    <main className="min-h-screen bg-[#0a0a0a] flex items-center justify-center p-4 md:p-8">
 
-  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-red-500/60 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-red-500/60 via-transparent to-transparent pointer-events-none" />
 
-  <div className="max-w-6xl w-full z-10">
+      <div className="max-w-6xl w-full z-10">
 
-    {/* Hero Section */}
-    <div className="flex flex-col">
+        {/* Hero Section */}
+        <div className="flex flex-col">
 
-      {/* Welcome Animation */}
-      <div className="animation-div">
-        <h2 className="leading-tight">
-          <span className="block text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
-            <TypeAnimation
-              sequence={["Welcome To SoftNova", 2000]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-              cursor={false}
-            />
-          </span>
+          {/* Welcome Animation */}
+          <div className="animation-div">
+            <h2 className="leading-tight">
+              <span className="block text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
+                <TypeAnimation
+                  sequence={["Welcome To SoftNova", 2000]}
+                  wrapper="span"
+                  speed={50}
+                  repeat={Infinity}
+                  cursor={false} />
+              </span>
 
-          <span className="block text-red-500 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mt-2">
-            <TypeAnimation
-              sequence={[
-                "Academy",
-                2000,
-                "",
-                500,
-              ]}
-              wrapper="span"
-              speed={50}
-              deletionSpeed={65}
-              repeat={Infinity}
-              cursor={true}
-            />
-          </span>
-        </h2>
-      </div>
-
-      <div className="flex flex-col md:flex-row items-center">
-
-        {/* Left Side */}
-        <div className="flex-1 w-full text-white space-y-4 sm:space-y-6">
-
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight font-serif pr-0 md:pr-10">
-            Skills that{" "}
-            <span className="text-white">
-              <TypeAnimation
-                sequence={[
-                  "get you",
-                  2000,
-                  "",
-                  500,
-                ]}
-                wrapper="span"
-                speed={50}
-                repeat={Infinity}
-                cursor={false}
-              />
-            </span>{" "}
-            <span className="text-red-500">
-              <TypeAnimation
-                sequence={[
-                  "hired.",
-                  2000,
-                  "job-ready.",
-                  2000,
-                  "future-ready.",
-                  2000,
-                  "successful.",
-                  2000,
-                ]}
-                wrapper="span"
-                speed={49}
-                repeat={Infinity}
-                cursor={true}
-              />
-            </span>
-          </h1>
-
-          <div className="flex flex-wrap gap-4 sm:gap-6 md:gap-8 pt-4 sm:pt-6 md:pt-8">
-            <div>
-              <div className="text-xl sm:text-2xl font-bold">10+</div>
-              <div className="text-gray-500 text-xs sm:text-sm">COURSES</div>
-            </div>
-
-            <div>
-              <div className="text-xl sm:text-2xl font-bold">100K+</div>
-              <div className="text-gray-500 text-xs sm:text-sm">STUDENTS</div>
-            </div>
-
-            <div>
-              <div className="text-xl sm:text-2xl font-bold">4.9 ★</div>
-              <div className="text-gray-500 text-xs sm:text-sm">AVG. RATING</div>
-            </div>
+              <span className="block text-red-500 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mt-2">
+                <TypeAnimation
+                  sequence={[
+                    "Academy",
+                    2000,
+                    "",
+                    500,
+                  ]}
+                  wrapper="span"
+                  speed={50}
+                  deletionSpeed={65}
+                  repeat={Infinity}
+                  cursor={true} />
+              </span>
+            </h2>
           </div>
 
-        </div>
+          <div className="flex flex-col md:flex-row items-center">
 
-        {/* Right Side */}
-        <div className="flex-1 w-full relative pt-2 sm:pt-1">
+            {/* Left Side */}
+            <div className="flex-1 w-full text-white space-y-4 sm:space-y-6">
 
-          <img
-            src="/hero.jpg"
-            alt="Students collaborating"
-            className="rounded-2xl sm:rounded-3xl shadow-2xl w-full h-[260px] sm:h-[360px] md:h-[420px] lg:h-[500px] object-cover"
-          />
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight font-serif pr-0 md:pr-10">
+                Skills that{" "}
+                <span className="text-white">
+                  <TypeAnimation
+                    sequence={[
+                      "get you",
+                      2000,
+                      "",
+                      500,
+                    ]}
+                    wrapper="span"
+                    speed={50}
+                    repeat={Infinity}
+                    cursor={false} />
+                </span>{" "}
+                <span className="text-red-500">
+                  <TypeAnimation
+                    sequence={[
+                      "hired.",
+                      2000,
+                      "job-ready.",
+                      2000,
+                      "future-ready.",
+                      2000,
+                      "successful.",
+                      2000,
+                    ]}
+                    wrapper="span"
+                    speed={49}
+                    repeat={Infinity}
+                    cursor={true} />
+                </span>
+              </h1>
 
-          <div className="absolute top-3 left-3 sm:top-4 sm:left-4 md:top-6 md:left-5 bg-red-900/10 backdrop-blur p-2.5 sm:p-3 md:p-4 rounded-lg sm:rounded-xl border border-gray-700 flex items-center gap-2 sm:gap-3">
-            <div className="bg-red-500 p-2 sm:p-3 rounded-full text-xs">★</div>
+              <div className="flex flex-wrap gap-4 sm:gap-6 md:gap-8 pt-4 sm:pt-6 md:pt-8">
+                <div>
+                  <div className="text-xl sm:text-2xl font-bold">10+</div>
+                  <div className="text-gray-500 text-xs sm:text-sm">COURSES</div>
+                </div>
 
-            <div>
-              <div className="font-bold text-white text-sm sm:text-base">4.9 / 5</div>
-              <div className="text-gray-400 text-[10px] sm:text-xs">from 28k reviews</div>
+                <div>
+                  <div className="text-xl sm:text-2xl font-bold">100K+</div>
+                  <div className="text-gray-500 text-xs sm:text-sm">STUDENTS</div>
+                </div>
+
+                <div>
+                  <div className="text-xl sm:text-2xl font-bold">4.9 ★</div>
+                  <div className="text-gray-500 text-xs sm:text-sm">AVG. RATING</div>
+                </div>
+              </div>
+
             </div>
+
+            {/* Right Side */}
+            <div className="flex-1 w-full relative pt-2 sm:pt-1">
+
+              <img src="/hero.jpg" alt="Students collaborating" className="rounded-2xl sm:rounded-3xl shadow-2xl w-full h-[260px] sm:h-[360px] md:h-[420px] lg:h-[500px] object-cover" />
+
+              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 md:top-6 md:left-5 bg-red-900/10 backdrop-blur p-2.5 sm:p-3 md:p-4 rounded-lg sm:rounded-xl border border-gray-700 flex items-center gap-2 sm:gap-3">
+                <div className="bg-red-500 p-2 sm:p-3 rounded-full text-xs">★</div>
+
+                <div>
+                  <div className="font-bold text-white text-sm sm:text-base">4.9 / 5</div>
+                  <div className="text-gray-400 text-[10px] sm:text-xs">from 28k reviews</div>
+                </div>
+              </div>
+
+            </div>
+
           </div>
 
         </div>
 
       </div>
 
-    </div>
-
-  </div>
-
-</main>  );
+    </main>);
 }
