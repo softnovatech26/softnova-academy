@@ -25,7 +25,7 @@ function About() {
       image: khadeeja,
     },
     {
-      name: "Areeba",
+      name: "Areeba Siddique",
       role: "Web Team Leader",
       image: Aree,
     },

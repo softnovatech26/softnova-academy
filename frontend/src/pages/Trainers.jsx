@@ -17,7 +17,7 @@ const trainersData = [
   },
   {
     id: 2,
-    name: "Areeba",
+    name: "Areeba Siddique",
     role: "React Native Instructor",
     image: areeba,
     description: "3+ years of experience in mobile app development with React Native.",
