@@ -8,7 +8,80 @@ export const courses = [
     description: "Build responsive websites and modern web applications with hands-on projects.",
     level: "Beginner to Advanced",
     duration: "8 weeks",
+    outline: [
+  {
+    title: "Month 1 - Chapter 0",
+    content: [
+      "Introduction to HTML",
+      "Web Basics",
+      "Editors",
+      "First Webpage",
+    ],
   },
+  {
+    title: "Month 2 - Chapter 1",
+    content: [
+      "Headings",
+      "Paragraphs",
+      "Links",
+      "Images",
+      "Practice",
+    ],
+  },
+  {
+    title: "Month 3 - Chapter 2",
+    content: [
+      "Lists",
+      "Tables",
+      "Navigation",
+      "Media",
+    ],
+  },
+  {
+    title: "Month 4 - Chapter 3",
+    content: [
+      "Forms",
+      "Input Elements",
+      "Semantic Tags",
+    ],
+  },
+  {
+    title: "Month 5 - Chapter 4",
+    content: [
+      "Advanced Forms",
+      "Video",
+      "Audio",
+      "Tables",
+      "Lists",
+    ],
+  },
+  {
+    title: "Month 6 - Chapter 5",
+    content: [
+      "SEO Basics",
+      "Website Publishing",
+      "Revision",
+      "Final Project",
+    ],
+  },
+  {
+    title: "Assessment & Evaluation",
+    content: [
+      "Daily Class Activities – Short practical exercises and coding tasks during each class.",
+      "Weekly Quiz – Quiz at the end of every week.",
+      "Weekly Practical Lab – Hands-on HTML coding exercises.",
+      "Monthly Assignment – Build web pages using HTML.",
+      "Monthly Assessment Test – Written and practical assessment.",
+      "Class Participation – Attendance and classroom engagement.",
+      "Mini Projects – Small HTML projects.",
+      "Final Project – Complete multi-page website.",
+      "Final Viva – Oral assessment.",
+      "Final Examination – Comprehensive theory and practical exam.",
+    ],
+  },
+],
+  },
+  
   {
     id: 2,
     slug: "python-data-science",
@@ -48,6 +121,93 @@ export const courses = [
     description: "Explore machine learning, neural networks, and AI-powered solutions.",
     level: "Intermediate",
     duration: "10 weeks",
+    outline: [
+  {
+    title: "Month 1 – Introduction to Artificial Intelligence",
+    content: [
+      "Week 1: What is AI?, History of AI, AI Around Us, AI vs Human Intelligence",
+      "Week 2: Types of AI (Narrow, General, Super AI)",
+      "Week 3: AI in Education, Healthcare, Banking, Daily Life",
+      "Week 4: Advantages, Limitations, Myths, Weekly Quiz",
+    ],
+  },
+  {
+    title: "Month 2 – AI Technologies",
+    content: [
+      "Week 1: Machine Learning, Deep Learning, Neural Networks",
+      "Week 2: Computer Vision, Face Recognition, Image Recognition",
+      "Week 3: NLP, Chatbots, Language Translation",
+      "Week 4: Speech Recognition, Voice Assistants, Recommendation Systems",
+    ],
+  },
+  {
+    title: "Month 3 – AI Tools",
+    content: [
+      "Week 1: ChatGPT, Gemini, Claude, Microsoft Copilot",
+      "Week 2: Perplexity AI, NotebookLM, Grammarly AI, Canva AI",
+      "Week 3: AI Image, Video & Presentation Tools",
+      "Week 4: AI Productivity Tools, AI Search Engines, Assignment",
+    ],
+  },
+  {
+    title: "Month 4 – Practical Use of AI",
+    content: [
+      "Week 1: Prompt Engineering Basics",
+      "Week 2: AI for Students, Teachers & Developers",
+      "Week 3: AI in Business, Marketing & Customer Support",
+      "Week 4: AI for Writing, Research & Resume Building",
+    ],
+  },
+  {
+    title: "Month 5 – Practical AI Applications",
+    content: [
+      "Week 1: AI for Study, Notes, Summaries & Quizzes",
+      "Week 2: AI for Content Writing, Emails, Presentations & Social Media",
+      "Week 3: AI Image, Logo, Poster, Video & Voice Generation",
+      "Week 4: AI in Business, Healthcare, Marketing, Case Studies",
+    ],
+  },
+  {
+    title: "Month 6 – AI Ethics & Career",
+    content: [
+      "Week 1: AI Ethics & Responsible AI",
+      "Week 2: AI Careers, Skills & Future",
+      "Week 3: Freelancing, AI Business Ideas, Remote Jobs",
+      "Week 4: Final Project, Presentation, Viva & Course Review",
+    ],
+  },
+  {
+    title: "AI Tools Covered",
+    content: [
+      "ChatGPT",
+      "Gemini",
+      "Claude",
+      "Microsoft Copilot",
+      "Perplexity AI",
+      "NotebookLM",
+      "Canva AI",
+      "Gamma AI",
+      "Grammarly AI",
+      "ElevenLabs",
+      "Leonardo AI",
+    ],
+  },
+  {
+    title: "Assessment & Evaluation",
+    content: [
+      "Daily Class Activities",
+      "Weekly Quiz",
+      "Monthly Assignment",
+      "Monthly Assessment Test",
+      "Class Participation",
+      "Presentation",
+      "Case Study Analysis",
+      "Final Project",
+      "Final Viva",
+      "Final Examination",
+    ],
+  },
+],
   },
   {
     id: 6,
