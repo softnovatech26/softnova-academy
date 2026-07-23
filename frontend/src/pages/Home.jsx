@@ -406,119 +406,170 @@ export default Home;
 
 function Herosection() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a] flex items-center justify-center p-4 md:p-8">
+    <section className="relative min-h-screen bg-[#080808] overflow-hidden flex items-center">
 
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-red-500/60 via-transparent to-transparent pointer-events-none" />
+      {/* Background Glow */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-red-600/20 blur-[120px] rounded-full"></div>
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-red-500/10 blur-[100px] rounded-full"></div>
 
-      <div className="max-w-6xl w-full z-10">
 
-        {/* Hero Section */}
-        <div className="flex flex-col">
+      <div className="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center relative z-10">
 
-          {/* Welcome Animation */}
-          <div className="animation-div">
-            <h2 className="leading-tight">
-              <span className="block text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
-                <TypeAnimation
-                  sequence={["Welcome To SoftNova", 2000]}
-                  wrapper="span"
-                  speed={50}
-                  repeat={Infinity}
-                  cursor={false} />
-              </span>
 
-              <span className="block text-red-500 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mt-2">
-                <TypeAnimation
-                  sequence={[
-                    "Academy",
-                    2000,
-                    "",
-                    500,
-                  ]}
-                  wrapper="span"
-                  speed={50}
-                  deletionSpeed={65}
-                  repeat={Infinity}
-                  cursor={true} />
-              </span>
-            </h2>
-          </div>
+        {/* LEFT CONTENT */}
+        <div className="text-white">
 
-          <div className="flex flex-col md:flex-row items-center">
+          <span className="inline-block border border-red-600 text-red-500 px-5 py-2 rounded-full text-sm mb-6">
+            🚀 Welcome To SoftNova Academy
+          </span>
 
-            {/* Left Side */}
-            <div className="flex-1 w-full text-white space-y-4 sm:space-y-6">
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight font-serif pr-0 md:pr-10">
-                Skills that{" "}
-                <span className="text-white">
-                  <TypeAnimation
-                    sequence={[
-                      "get you",
-                      2000,
-                      "",
-                      500,
-                    ]}
-                    wrapper="span"
-                    speed={50}
-                    repeat={Infinity}
-                    cursor={false} />
-                </span>{" "}
-                <span className="text-red-500">
-                  <TypeAnimation
-                    sequence={[
-                      "hired.",
-                      2000,
-                      "job-ready.",
-                      2000,
-                      "future-ready.",
-                      2000,
-                      "successful.",
-                      2000,
-                    ]}
-                    wrapper="span"
-                    speed={49}
-                    repeat={Infinity}
-                    cursor={true} />
-                </span>
-              </h1>
+          <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold leading-tight">
+            Learn Skills That
+            <span className="text-red-600 block">
+              Build Your Future
+            </span>
+          </h1>
 
-              <div className="flex flex-wrap gap-4 sm:gap-6 md:gap-8 pt-4 sm:pt-6 md:pt-8">
-                <div>
-                  <div className="text-xl sm:text-2xl font-bold">10+</div>
-                  <div className="text-gray-500 text-xs sm:text-sm">COURSES</div>
-                </div>
 
-                <div>
-                  <div className="text-xl sm:text-2xl font-bold">100K+</div>
-                  <div className="text-gray-500 text-xs sm:text-sm">STUDENTS</div>
-                </div>
+          <p className="text-gray-400 text-lg mt-6 max-w-xl leading-8">
+            Master Web Development, Python, Data Science and modern
+            technologies with practical projects and industry-focused training.
+          </p>
 
-                <div>
-                  <div className="text-xl sm:text-2xl font-bold">4.9 ★</div>
-                  <div className="text-gray-500 text-xs sm:text-sm">AVG. RATING</div>
-                </div>
-              </div>
 
+         <div className="flex flex-wrap gap-4 mt-8">
+
+  <div className="bg-white/5 border border-gray-800 rounded-xl px-5 py-3">
+    <h3 className="text-white font-semibold">
+      🎓 Expert Training
+    </h3>
+    <p className="text-gray-400 text-sm">
+      Industry-focused courses
+    </p>
+  </div>
+
+
+  <div className="bg-white/5 border border-gray-800 rounded-xl px-5 py-3">
+    <h3 className="text-white font-semibold">
+      💻 Practical Projects
+    </h3>
+    <p className="text-gray-400 text-sm">
+      Learn by building
+    </p>
+  </div>
+
+
+  <div className="bg-white/5 border border-gray-800 rounded-xl px-5 py-3">
+    <h3 className="text-white font-semibold">
+      🏆 Certificate
+    </h3>
+    <p className="text-gray-400 text-sm">
+      Career growth support
+    </p>
+  </div>
+
+</div>
+
+
+          {/* Stats */}
+
+          <div className="flex gap-6 mt-12">
+
+            <div className="bg-white/5 border border-gray-800 rounded-xl px-6 py-4">
+              <h2 className="text-3xl font-bold text-red-500">
+                10+
+              </h2>
+              <p className="text-gray-400 text-sm">
+                Courses
+              </p>
             </div>
 
-            {/* Right Side */}
-            <div className="flex-1 w-full relative pt-2 sm:pt-1">
 
-              <img src="/Home.jpeg" alt="Students collaborating" className="rounded-2xl sm:rounded-3xl shadow-2xl w-full h-[260px] sm:h-[360px] md:h-[420px] lg:h-[500px] object-cover" />
+            <div className="bg-white/5 border border-gray-800 rounded-xl px-6 py-4">
+              <h2 className="text-3xl font-bold text-red-500">
+                500+
+              </h2>
+              <p className="text-gray-400 text-sm">
+                Students
+              </p>
+            </div>
 
-              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 md:top-6 md:left-5 bg-red-900/10 backdrop-blur p-2.5 sm:p-3 md:p-4 rounded-lg sm:rounded-xl border border-gray-700 flex items-center gap-2 sm:gap-3">
-                
-               
-              </div>
 
+            <div className="bg-white/5 border border-gray-800 rounded-xl px-6 py-4">
+              <h2 className="text-3xl font-bold text-red-500">
+                4.9
+              </h2>
+              <p className="text-gray-400 text-sm">
+                Rating
+              </p>
             </div>
 
           </div>
 
         </div>
 
+
+
+        {/* RIGHT IMAGE */}
+
+        <div className="relative">
+
+
+          <div className="absolute inset-0 bg-red-600/20 blur-3xl rounded-full"></div>
+
+
+          <img
+            src="/Home.jpeg"
+            alt="Students"
+            className="
+            relative 
+            rounded-3xl 
+            shadow-2xl
+            w-full
+            h-[550px]
+            object-cover
+            border
+            border-gray-800
+            "
+          />
+
+
+          {/* Floating Card */}
+
+          <div className="absolute top-10 -left-6 bg-black/80 backdrop-blur border border-gray-700 rounded-xl px-5 py-4">
+
+            <h3 className="text-white font-bold">
+              ⭐ 4.9/5 Rating
+            </h3>
+
+            <p className="text-gray-400 text-sm">
+              Student Reviews
+            </p>
+
+          </div>
+
+
+
+          <div className="absolute bottom-10 -right-6 bg-red-600 rounded-xl px-6 py-4">
+
+            <h3 className="text-white text-2xl font-bold">
+              500+
+            </h3>
+
+            <p className="text-white text-sm">
+              Learners
+            </p>
+
+          </div>
+
+
+        </div>
+
+
       </div>
 
-    </main>);
+    </section>
+  );
 }
+  
