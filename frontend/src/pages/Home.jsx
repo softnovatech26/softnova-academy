@@ -505,15 +505,11 @@ function Herosection() {
             {/* Right Side */}
             <div className="flex-1 w-full relative pt-2 sm:pt-1">
 
-              <img src="/hero.jpg" alt="Students collaborating" className="rounded-2xl sm:rounded-3xl shadow-2xl w-full h-[260px] sm:h-[360px] md:h-[420px] lg:h-[500px] object-cover" />
+              <img src="/Home.jpeg" alt="Students collaborating" className="rounded-2xl sm:rounded-3xl shadow-2xl w-full h-[260px] sm:h-[360px] md:h-[420px] lg:h-[500px] object-cover" />
 
               <div className="absolute top-3 left-3 sm:top-4 sm:left-4 md:top-6 md:left-5 bg-red-900/10 backdrop-blur p-2.5 sm:p-3 md:p-4 rounded-lg sm:rounded-xl border border-gray-700 flex items-center gap-2 sm:gap-3">
-                <div className="bg-red-500 p-2 sm:p-3 rounded-full text-xs">★</div>
-
-                <div>
-                  <div className="font-bold text-white text-sm sm:text-base">4.9 / 5</div>
-                  <div className="text-gray-400 text-[10px] sm:text-xs">from 28k reviews</div>
-                </div>
+                
+               
               </div>
 
             </div>
