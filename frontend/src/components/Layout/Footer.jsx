@@ -218,7 +218,8 @@ const Footer = () => {
 
         <p className="my-[6px] text-[13px] sm:text-[15px]">
 
-          Designed with ❤️ by SoftNova Academy Team
+          Designed with ❤️ by SoftNova Academy Team Developers
+          
 
         </p>
 
