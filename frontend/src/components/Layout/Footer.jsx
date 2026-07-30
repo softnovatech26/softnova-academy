@@ -65,23 +65,34 @@ const Footer = () => {
             data-aos-delay="300"
           >
 
-            <a href="#" className="w-9 h-9 rounded-full bg-red-700 flex items-center justify-center hover:scale-110 transition">
+            <a href="https://www.facebook.com/softnova.tech" className="w-9 h-9 rounded-full bg-red-700 flex items-center justify-center hover:scale-110 transition"
+               target="_blank"
+               rel="noopener noreferrer">
               <FaFacebookF />
+              
             </a>
 
-            <a href="#" className="w-9 h-9 rounded-full bg-red-700 flex items-center justify-center hover:scale-110 transition">
+            <a href="https://chat.whatsapp.com/K35VGX7gqWcHnsL51lWIlN" className="w-9 h-9 rounded-full bg-red-700 flex items-center justify-center hover:scale-110 transition"
+               target="_blank"
+               rel="noopener noreferrer">
               <FaWhatsapp />
             </a>
 
-            <a href="#" className="w-9 h-9 rounded-full bg-red-700 flex items-center justify-center hover:scale-110 transition">
+            <a href="https://www.instagram.com/softnova.tech" className="w-9 h-9 rounded-full bg-red-700 flex items-center justify-center hover:scale-110 transition"
+               target="_blank"
+               rel="noopener noreferrer">
               <FaInstagram />
             </a>
 
-            <a href="#" className="w-9 h-9 rounded-full bg-red-700 flex items-center justify-center hover:scale-110 transition">
+            <a href="https://www.linkedin.com/company/soft-nova-tech/" className="w-9 h-9 rounded-full bg-red-700 flex items-center justify-center hover:scale-110 transition"
+               target="_blank"
+               rel="noopener noreferrer">
               <FaLinkedinIn />
             </a>
 
-            <a href="#" className="w-9 h-9 rounded-full bg-red-700 flex items-center justify-center hover:scale-110 transition">
+            <a href="https://x.com/SoftNova94" className="w-9 h-9 rounded-full bg-red-700 flex items-center justify-center hover:scale-110 transition"
+               target="_blank"
+               rel="noopener noreferrer">
               <FaTwitter />
             </a>
 
