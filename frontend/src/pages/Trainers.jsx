@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import Bhavish from "../assets/images/Bhavish .jpeg";
 import areeba from "../assets/images/Areeba.jpg";
 import Sammad from "../assets/images/sammad.jpeg";
