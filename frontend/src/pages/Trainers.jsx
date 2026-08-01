@@ -2,7 +2,7 @@
 import Bhavish from "../assets/images/Bhavish .jpeg";
 import areeba from "../assets/images/Areeba.jpg";
 import Sammad from "../assets/images/sammad.jpeg";
-
+// BOOM charc foce push 
 const trainersData = [
   { id: 1, name: "Bhavish Kumar", role: "AI & React instructor", image: Bhavish, description: "2+ years AI and React development experience.", courses: 2, students: 300 },
   { id: 2, name: "Areeba Siddique", role: "React Native Instructor", image: areeba, description: "3+ years of experience in mobile app development with React Native.", courses: 1, students: 400 },
