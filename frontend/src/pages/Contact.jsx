@@ -2,320 +2,67 @@ import React, { useState } from "react";
 import axios from "axios";
 
 function Contact() {
-
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
-
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("");
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-
-      const response = await axios.post(
-        "http://localhost:5000/api/contact",
-        formData
-      );
-
-      console.log("Backend Response:", response.data);
-
+      const response = await axios.post("http://localhost:5000/api/contact", formData);
       setStatus(response.data.message);
-
-      setFormData({
-        name: "",
-        email: "",
-        message: ""
-      });
-
+      setFormData({ name: "", email: "", message: "" });
     } catch (error) {
-
-      console.log("Contact Error:", error);
-
-      setStatus(
-        "Something went wrong. Please try again."
-      );
-
+      setStatus("Something went wrong. Please try again.");
     }
   };
 
-
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-white py-20 px-5 relative overflow-hidden">
-
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-red-500/40 via-transparent to-transparent pointer-events-none"></div>
-
-
-      <section className="max-w-7xl mx-auto relative z-10">
-
-
-        <div
-          className="text-center mb-16"
-          data-aos="zoom-in"
-          data-aos-duration="1500"
-        >
-
-          <span
-            className="border border-red-600 text-red-500 text-xs tracking-widest uppercase rounded-full px-5 py-2"
-            data-aos="fade-down"
-          >
-            Contact Us
-          </span>
-
-
-          <h1
-            className="text-4xl md:text-6xl font-bold mt-6"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            Get in touch with{" "}
-            <span className="text-red-500">SoftNova</span>
-          </h1>
-
-
-          <p
-            className="text-gray-400 max-w-2xl mx-auto mt-5"
-            data-aos="fade-up"
-            data-aos-delay="400"
-          >
-            Have questions about our courses, internships, or programs?
-            Contact our team and we will help you.
-          </p>
-
+    <main className="relative min-h-screen overflow-hidden bg-[#0a0a0a] px-3 py-12 text-white sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-red-500/40 via-transparent to-transparent" />
+      <section className="relative z-10 mx-auto max-w-7xl">
+        <div className="mb-12 text-center sm:mb-16" data-aos="zoom-in" data-aos-duration="1500">
+          <span className="rounded-full border border-red-600/60 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-red-400" data-aos="fade-down">Contact Us</span>
+          <h1 className="mt-6 text-2xl font-bold sm:text-3xl md:text-4xl lg:text-6xl" data-aos="fade-up" data-aos-delay="200">Get in touch with <span className="text-red-500">SoftNova</span></h1>
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-8 text-gray-400 sm:text-base" data-aos="fade-up" data-aos-delay="400">Have questions about our courses, internships, or programs? Contact our team and we will help you.</p>
         </div>
 
-
-
-        <div className="grid md:grid-cols-2 gap-10">
-
-
-          <div
-            className="bg-[#141414] border border-gray-800 rounded-3xl p-8"
-            data-aos="fade-right"
-            data-aos-duration="1500"
-          >
-
-            <h2 className="text-2xl font-bold mb-6">
-              Contact Information
-            </h2>
-
-
-            <div className="space-y-5">
-
-
-              <div
-                className="border border-gray-800 rounded-xl p-5"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                <h3 className="text-red-500 font-semibold">
-                  Email
-                </h3>
-                <p className="text-gray-400">
-                  info@softnova.com
-                </p>
+        <div className="grid gap-8 lg:grid-cols-2">
+          <div className="rounded-[1.5rem] border border-white/10 bg-[#141414] p-4 sm:p-6 lg:p-8" data-aos="fade-right" data-aos-duration="1500">
+            <h2 className="mb-6 text-2xl font-semibold">Contact Information</h2>
+            <div className="space-y-4">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-red-500">Email</h3>
+                <p className="mt-2 text-sm text-gray-400">info@softnova.com</p>
               </div>
-
-
-
-              <div
-                className="border border-gray-800 rounded-xl p-5"
-                data-aos="fade-up"
-                data-aos-delay="400"
-              >
-                <h3 className="text-red-500 font-semibold">
-                  Phone
-                </h3>
-                <p className="text-gray-400">
-                  +92 300 1234567
-                </p>
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-red-500">Phone</h3>
+                <p className="mt-2 text-sm text-gray-400">+92 300 1234567</p>
               </div>
-
-
-
-
-              <div
-                className="border border-gray-800 rounded-xl p-5"
-                data-aos="fade-up"
-                data-aos-delay="600"
-              >
-                <h3 className="text-red-500 font-semibold">
-                  Address
-                </h3>
-                <p className="text-gray-400">
-                  Hyderabad, Pakistan
-                </p>
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-red-500">Address</h3>
+                <p className="mt-2 text-sm text-gray-400">Hyderabad, Pakistan</p>
               </div>
-
-
             </div>
-
           </div>
 
-
-
-
-
-          <div
-            className="bg-[#141414] border border-gray-800 rounded-3xl p-8"
-            data-aos="fade-left"
-            data-aos-duration="1500"
-          >
-
-            <h2
-              className="text-2xl font-bold mb-6"
-              data-aos="zoom-in"
-            >
-              Send Message
-            </h2>
-
-
-
-            <form
-              onSubmit={handleSubmit}
-              className="space-y-5"
-            >
-
-
-              <input
-                data-aos="fade-up"
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Your Name"
-                className="w-full bg-black border border-gray-700 rounded-lg p-3 text-white outline-none focus:border-red-600"
-              />
-
-
-
-              <input
-                data-aos="fade-up"
-                data-aos-delay="200"
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Your Email"
-                className="w-full bg-black border border-gray-700 rounded-lg p-3 text-white outline-none focus:border-red-600"
-              />
-
-
-
-              <textarea
-                data-aos="fade-up"
-                data-aos-delay="400"
-                rows="5"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Your Message"
-                className="w-full bg-black border border-gray-700 rounded-lg p-3 text-white outline-none focus:border-red-600"
-              ></textarea>
-
-
-
-              <button
-                data-aos="zoom-in"
-                data-aos-delay="600"
-                type="submit"
-                className="w-full bg-red-600 py-3 rounded-lg font-semibold hover:bg-red-700 transition"
-              >
-                Send Message
-              </button>
-
-
-
-              {status && (
-                <p className="text-center text-red-400 mt-3">
-                  {status}
-                </p>
-              )}
-
-
+          <div className="rounded-[1.5rem] border border-white/10 bg-[#141414] p-4 sm:p-6 lg:p-8" data-aos="fade-left" data-aos-duration="1500">
+            <h2 className="mb-6 text-2xl font-semibold">Send Message</h2>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Your Name" className="w-full rounded-2xl border border-white/10 bg-black/60 px-4 py-3 text-sm text-white outline-none transition focus:border-red-500" />
+              <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Your Email" className="w-full rounded-2xl border border-white/10 bg-black/60 px-4 py-3 text-sm text-white outline-none transition focus:border-red-500" />
+              <textarea rows="5" name="message" value={formData.message} onChange={handleChange} placeholder="Your Message" className="w-full rounded-2xl border border-white/10 bg-black/60 px-4 py-3 text-sm text-white outline-none transition focus:border-red-500" />
+              <button type="submit" className="w-full rounded-full bg-red-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-red-700">Send Message</button>
+              {status && <p className="text-center text-sm text-red-400">{status}</p>}
             </form>
-
-
           </div>
-
-
         </div>
-
-
       </section>
-
-
     </main>
   );
 }
 
 export default Contact;
-
-
-
-
-
-          //   {/* ✅ FIXED VISIT SECTION */}
-          //   <div className="group relative rounded-3xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-xl shadow-xl transform transition duration-500 hover:-translate-y-4 hover:shadow-red-900/40 p-6">
-          //     <h3 className="text-xl font-semibold mb-2">Visit Us</h3>
-
-          //     <a
-          //       href="https://maps.google.com/?q=Sindh,Pakistan"
-          //       target="_blank"
-          //       rel="noreferrer"
-          //       className="text-red-600 hover:underline block"
-          //     >
-               
-          //     </a>
-
-          //     <a
-          //       href="https://www.facebook.com/softnova.tech"
-          //       target="_blank"
-          //       rel="noreferrer"
-          //       className="text-red-600 hover:underline block"
-          //     >
-          //       Facebook
-          //     </a>
-
-          //     <a
-          //       href="https://www.instagram.com/softnova.tech"
-          //       target="_blank"
-          //       rel="noreferrer"
-          //       className="text-red-600 hover:underline block"
-          //     >
-          //       Instagram
-          //     </a>
-
-          //     <a
-          //       href="https://www.linkedin.com/company/soft-nova-tech"
-          //       target="_blank"
-          //       rel="noreferrer"
-          //       className="text-red-600 hover:underline block"
-          //     >
-          //       LinkedIn
-          //     </a>
-
-          //     <a
-          //       href="https://x.com/SoftNova94"
-          //       target="_blank"
-          //       rel="noreferrer"
-          //       className="text-red-600 hover:underline block"
-          //     >
-          //       Twitter
-          //     </a>
-
-          //     <div>SoftNova Tech Based_Islamabad, Punjab,Pakistan</div>
-          //   </div>
-
-          // </div>

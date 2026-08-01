@@ -25,15 +25,15 @@ function CourseDetails() {
 
   if (!course) {
     return (
-      <main className="min-h-screen bg-[#0a0a0a] flex items-center justify-center">
+      <main className="flex min-h-screen items-center justify-center bg-[#0a0a0a] px-3 py-8 sm:px-6">
         <div className="text-center">
-          <h1 className="text-5xl font-bold text-white mb-6">
+          <h1 className="mb-6 text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
             Course not found
           </h1>
 
           <Link
             to="/courses"
-            className="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-8 rounded-lg"
+            className="rounded-lg bg-red-500 px-6 py-3 font-bold text-white transition hover:bg-red-600"
           >
             Back to Courses
           </Link>
@@ -50,30 +50,30 @@ function CourseDetails() {
 
 
   return (
-    <main className="min-h-screen bg-[#0a0a0a] relative overflow-hidden py-16">
+    <main className="relative min-h-screen overflow-hidden bg-[#0a0a0a] px-3 py-12 sm:px-6 sm:py-16 lg:px-8">
 
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-red-500/60 via-transparent to-transparent pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 mx-auto max-w-7xl">
 
         <Link
           to="/courses"
-          className="inline-flex items-center text-red-500 hover:text-red-400 font-semibold mb-8"
+          className="mb-8 inline-flex items-center font-semibold text-red-500 transition hover:text-red-400"
         >
           ← Back to Courses
         </Link>
 
 
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-10">
+        <h1 className="mb-10 text-2xl font-bold text-white sm:text-3xl md:text-4xl lg:text-5xl">
           {course.title}
         </h1>
 
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <div className="grid gap-6 lg:grid-cols-4 lg:gap-8">
 
 
           {/* Sidebar */}
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6">
+          <div className="rounded-[1.5rem] border border-gray-800 bg-gray-900 p-4 sm:p-6">
 
 
             {/* Modules */}
@@ -89,7 +89,7 @@ function CourseDetails() {
                     <button
                       key={index}
                       onClick={()=>changeModule(module)}
-                      className={`w-full text-left px-4 py-3 rounded-lg ${
+                      className={`w-full rounded-lg px-4 py-3 text-left text-sm sm:text-base ${
                         selectedModule?.title === module.title
                         ? "bg-red-500 text-white"
                         : "bg-gray-800 text-gray-300 hover:bg-gray-700"
@@ -139,9 +139,9 @@ function CourseDetails() {
 
           {/* Content */}
 
-          <div className="lg:col-span-3 bg-gray-900 border border-gray-800 rounded-2xl p-8">
+          <div className="rounded-[1.5rem] border border-gray-800 bg-gray-900 p-4 sm:p-6 lg:col-span-3 lg:p-8">
 
-            <h2 className="text-3xl md:text-4xl font-bold text-red-500 mb-8">
+            <h2 className="mb-8 text-2xl font-bold text-red-500 sm:text-3xl md:text-4xl">
               {selectedSection?.title}
             </h2>
 
@@ -152,14 +152,14 @@ function CourseDetails() {
 
                 <div
                   key={index}
-                  className="flex items-start gap-4 bg-gray-800 rounded-xl p-5"
+                  className="flex items-start gap-3 rounded-xl bg-gray-800 p-4 sm:gap-4 sm:p-5"
                 >
 
                   <span className="text-red-500 text-xl font-bold">
                     ✓
                   </span>
 
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="break-words text-sm leading-7 text-gray-300 sm:text-base">
                     {item}
                   </p>
 

@@ -1,243 +1,103 @@
-import { MdEmail } from "react-icons/md";
 import React from "react";
+import { MdEmail } from "react-icons/md";
 import {
   FaFacebookF,
   FaTwitter,
   FaWhatsapp,
   FaInstagram,
   FaLinkedinIn,
-  FaGlobeAsia
+  FaGlobeAsia,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const socialLinks = [
+    { href: "https://www.facebook.com/softnova.tech", icon: <FaFacebookF /> },
+    { href: "https://chat.whatsapp.com/K35VGX7gqWcHnsL51lWIlN", icon: <FaWhatsapp /> },
+    { href: "https://www.instagram.com/softnova.tech", icon: <FaInstagram /> },
+    { href: "https://www.linkedin.com/company/soft-nova-tech/", icon: <FaLinkedinIn /> },
+    { href: "https://x.com/SoftNova94", icon: <FaTwitter /> },
+  ];
+
   return (
-    <footer
-      className="relative text-white pt-12 sm:pt-16 md:pt-20 pb-8 sm:pb-10 overflow-hidden bg-slate-950 border border-white/10 shadow-[0_0_40px_-15px_rgba(255,45,45,0.15)] backdrop-blur-md"
-      data-aos="fade-up"
-      data-aos-duration="1200"
-    >
-
-      <div className="absolute top-0 right-0 w-[300px] sm:w-[400px] md:w-[500px] h-[300px] sm:h-[400px] md:h-[500px] bg-red-900/90 blur-[100px] rounded-full pointer-events-none"></div>
-
-
-      <div
-        className="w-[92%] sm:w-[90%] max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12 relative z-10"
-        data-aos="zoom-in"
-      >
-
-
-        {/* Logo Section */}
-        <div
-          className="space-y-4 text-center sm:text-left"
-          data-aos="fade-right"
-        >
-
-          <Link
-            to="/"
-            className="flex items-center gap-3 group inline-flex mx-auto sm:mx-0"
-          >
-            <img
-              src="/softnovalogo (2).jpeg"
-              alt="Logo"
-              className="w-8 h-8 rounded-full object-cover group-hover:rotate-[360deg] transition duration-500"
-            />
-
-            <h2 className="text-[20px] font-bold">
-              SoftNova
-              <span className="text-[#ff2d2d]">
-                Academy
-              </span>
-            </h2>
-
-          </Link>
-
-
-          <p className="text-[#a0a0a0] text-[14px] leading-relaxed">
-            We provide practical, skill-based training to build
-            industry-ready software development skills.
-          </p>
-
-
-          <div
-            className="flex gap-4 pt-2 justify-center sm:justify-start"
-            data-aos="zoom-in"
-            data-aos-delay="300"
-          >
-
-            <a href="https://www.facebook.com/softnova.tech" className="w-9 h-9 rounded-full bg-red-700 flex items-center justify-center hover:scale-110 transition"
-               target="_blank"
-               rel="noopener noreferrer">
-              <FaFacebookF />
-              
-            </a>
-
-            <a href="https://chat.whatsapp.com/K35VGX7gqWcHnsL51lWIlN" className="w-9 h-9 rounded-full bg-red-700 flex items-center justify-center hover:scale-110 transition"
-               target="_blank"
-               rel="noopener noreferrer">
-              <FaWhatsapp />
-            </a>
-
-            <a href="https://www.instagram.com/softnova.tech" className="w-9 h-9 rounded-full bg-red-700 flex items-center justify-center hover:scale-110 transition"
-               target="_blank"
-               rel="noopener noreferrer">
-              <FaInstagram />
-            </a>
-
-            <a href="https://www.linkedin.com/company/soft-nova-tech/" className="w-9 h-9 rounded-full bg-red-700 flex items-center justify-center hover:scale-110 transition"
-               target="_blank"
-               rel="noopener noreferrer">
-              <FaLinkedinIn />
-            </a>
-
-            <a href="https://x.com/SoftNova94" className="w-9 h-9 rounded-full bg-red-700 flex items-center justify-center hover:scale-110 transition"
-               target="_blank"
-               rel="noopener noreferrer">
-              <FaTwitter />
-            </a>
-
-          </div>
-
-        </div>
-
-
-
-        {/* Explore */}
-
-        <div
-          className="text-center sm:text-left"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-
-          <h3 className="text-lg font-semibold mb-6">
-            Explore
-          </h3>
-
-          <ul className="space-y-4 text-[#a0a0a0]">
-
-            <li>
-              <Link to="/courses">
-                Course
-              </Link>
-            </li>
-
-            <li>
-              <Link to="/trainers">
-                Trainer
-              </Link>
-            </li>
-
-            <li>
-              <Link to="/about">
-                About
-              </Link>
-            </li>
-
-            <li>
-              <Link to="/projects">
-                Projects
-              </Link>
-            </li>
-
-          </ul>
-
-        </div>
-      
-                  {/* Get in Touch */}
-
-        <div
-          className="text-center sm:text-left"
-          data-aos="fade-left"
-          data-aos-delay="600"
-        >
-
-          <h3 className="text-lg font-semibold mb-4 sm:mb-6">
-            Get in Touch
-          </h3>
-
-
-          <div>
-
-            <a
-              href="mailto:softnovaacademy.pk@gmail.com"
-              className="flex items-center gap-[10px] text-[#a0a0a0] mb-[15px] text-[14px] sm:text-[15px] justify-center sm:justify-start transition-colors duration-300 hover:text-[#ff2d2d]"
-            >
-
-              <MdEmail />
-
-              <span className="text-[13px] sm:text-[15px] break-all">
-                softnovaacademy.pk@gmail.com
-              </span>
-
-            </a>
-
-
-            <p className="flex items-center gap-[10px] text-[#a0a0a0] mb-[15px] text-[14px] sm:text-[15px] justify-center sm:justify-start">
-
-              <FaGlobeAsia />
-
-              <span>
-                Pakistan · Learn from Anywhere
-              </span>
-
+    <footer className="relative overflow-hidden border-t border-white/10 bg-[#030303] text-white">
+      <div className="absolute right-0 top-0 h-56 w-56 rounded-full bg-red-600/20 blur-3xl sm:h-80 sm:w-80" />
+      <div className="shell relative z-10 px-3 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
+          <div className="text-center md:text-left">
+            <Link to="/" className="inline-flex items-center gap-3">
+              <img
+                src="/softnovalogo (2).jpeg"
+                alt="SoftNova Academy"
+                className="h-10 w-10 rounded-full object-cover"
+              />
+              <h2 className="text-xl font-semibold">
+                SoftNova <span className="text-red-500">Academy</span>
+              </h2>
+            </Link>
+            <p className="mt-4 text-sm leading-7 text-gray-400">
+              Empowering learners with practical, future-ready technology skills and industry-focused training.
             </p>
-
+            <div className="mt-5 flex flex-wrap justify-center gap-3 md:justify-start">
+              {socialLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-sm text-gray-200 transition hover:-translate-y-1 hover:border-red-500/50 hover:text-red-500"
+                >
+                  {link.icon}
+                </a>
+              ))}
+            </div>
           </div>
 
+          <div className="text-center md:text-left">
+            <h3 className="text-lg font-semibold text-white">Explore</h3>
+            <ul className="mt-4 space-y-3 text-sm text-gray-400">
+              <li><Link to="/courses" className="transition hover:text-red-500">Courses</Link></li>
+              <li><Link to="/trainers" className="transition hover:text-red-500">Trainers</Link></li>
+              <li><Link to="/gallery" className="transition hover:text-red-500">Gallery</Link></li>
+              <li><Link to="/about" className="transition hover:text-red-500">About</Link></li>
+            </ul>
+          </div>
 
-
-          <div className="flex justify-center sm:justify-start">
-
-            <button
-              className="mt-[10px] bg-[#ef2b2d] text-white py-[10px] px-[20px] rounded-full text-[14px] sm:text-[15px] transition-all duration-300 hover:bg-white hover:text-[#ef2b2d] hover:scale-105"
+          <div className="text-center md:text-left">
+            <h3 className="text-lg font-semibold text-white">Get in Touch</h3>
+            <div className="mt-4 space-y-3 text-sm text-gray-400">
+              <a href="mailto:softnovaacademy.pk@gmail.com" className="flex items-center justify-center gap-2 transition hover:text-red-500 md:justify-start">
+                <MdEmail />
+                <span className="break-all">softnovaacademy.pk@gmail.com</span>
+              </a>
+              <p className="flex items-center justify-center gap-2 md:justify-start">
+                <FaGlobeAsia />
+                <span>Pakistan · Learn from Anywhere</span>
+              </p>
+            </div>
+            <Link
+              to="/contact"
+              className="mt-5 inline-flex rounded-full bg-red-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-red-700"
             >
-
               Register Now
-
-            </button>
-
+            </Link>
           </div>
 
-
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-5 text-center text-sm text-gray-400 md:text-left">
+            <h3 className="text-lg font-semibold text-white">Why learners choose us</h3>
+            <ul className="mt-3 space-y-2 text-sm leading-7">
+              <li>• Practical project-based coaching</li>
+              <li>• Flexible online and offline sessions</li>
+              <li>• Expert mentor support and career guidance</li>
+            </ul>
+          </div>
         </div>
 
-
+        <div className="mt-10 border-t border-white/10 pt-6 text-center text-sm text-gray-500">
+          <p>© 2026 SoftNova Academy. All rights reserved.</p>
+          <p className="mt-2">Designed with care for a premium learning experience.</p>
+        </div>
       </div>
-
-
-
-      {/* Bottom Footer */}
-
-      <div
-        data-aos="fade-up"
-        data-aos-delay="800"
-        className="w-[92%] sm:w-[90%] max-w-[1200px] mx-auto border-t border-white/5 mt-12 sm:mt-16 pt-6 sm:pt-8 text-center text-[#666] text-[13px] sm:text-[14px]"
-      >
-
-        <p className="my-[6px] text-[#ccc] text-[13px] sm:text-[15px]">
-
-          © 2026 
-          <strong className="text-white">
-            SoftNova Academy.
-          </strong>
-
-          All Rights Reserved.
-
-        </p>
-
-
-        <p className="my-[6px] text-[13px] sm:text-[15px]">
-
-          Designed with ❤️ by SoftNova Academy Team Developers
-          
-
-        </p>
-
-
-      </div>
-          
-
     </footer>
   );
 };
