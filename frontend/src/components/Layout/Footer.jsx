@@ -95,7 +95,7 @@ const Footer = () => {
 
         <div className="mt-10 border-t border-white/10 pt-6 text-center text-sm text-gray-500">
           <p>© 2026 SoftNova Academy. All rights reserved.</p>
-          <p className="mt-2">Designed with care for a premium learning experience.</p>
+          <p className="mt-2">Designed with ❤️ by SoftNova Tech Team Developers with care for a premium learning experience.</p>
         </div>
       </div>
     </footer>
