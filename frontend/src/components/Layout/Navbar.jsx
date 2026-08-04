@@ -23,7 +23,7 @@ function Navbar() {
         <Link to="/" className="flex min-w-0 items-center gap-2 sm:gap-3" onClick={closeMenu}>
           <div className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-full bg-white/10 p-1 sm:h-12 sm:w-12">
             <img
-              src="/softnovalogo (2).jpeg"
+              src="/softnovalogo (2).webp"
               alt="SoftNova Academy"
               className="h-full w-full rounded-full object-cover"
             />

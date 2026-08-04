@@ -1,8 +1,10 @@
 import React from "react";
-import Bhavish from "../assets/images/Bhavish .jpeg";
-import areeba from "../assets/images/Areeba.jpg";
-import Sammad from "../assets/images/sammad.jpeg";
-// BOOM charc foce push 
+import Bhavish from "../assets/images/Bhavish .webp";
+import areeba from "../assets/images/Areeba.webp";
+import Sammad from "../assets/images/sammad.webp";
+
+// BOOM charc foce push
+
 const trainersData = [
   { id: 1, name: "Bhavish Kumar", role: "AI & React instructor", image: Bhavish, description: "2+ years AI and React development experience.", courses: 2, students: 300 },
   { id: 2, name: "Areeba Siddique", role: "React Native Instructor", image: areeba, description: "3+ years of experience in mobile app development with React Native.", courses: 1, students: 400 },
@@ -18,29 +20,98 @@ function Trainers() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#0a0a0a] py-14 sm:py-16 lg:py-20">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-red-500/60 via-transparent to-transparent" />
+
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 text-center sm:mb-16" data-aos="zoom-in" data-aos-duration="1500">
-          <h2 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl" data-aos="fade-down">Our <span className="text-red-500">trainers</span></h2>
-          <p className="mt-5 text-sm leading-8 text-gray-400 sm:text-base" data-aos="fade-up" data-aos-delay="300">Learn from practitioners at top companies — not academics teaching theory.</p>
+        {/* Heading */}
+        <div
+          className="mb-12 text-center sm:mb-16"
+          data-aos="zoom-in"
+          data-aos-duration="700"
+        >
+          <h2
+            className="text-3xl font-bold text-white sm:text-4xl md:text-5xl"
+            data-aos="fade-down"
+            data-aos-duration="600"
+          >
+            Our <span className="text-red-500">trainers</span>
+          </h2>
+
+          <p
+            className="mt-5 text-sm leading-8 text-gray-400 sm:text-base"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-aos-duration="600"
+          >
+            Learn from practitioners at top companies — not academics teaching theory.
+          </p>
         </div>
 
-        <div className="mb-10 text-center" data-aos="fade-up" data-aos-duration="1200">
-          <h1 className="text-sm font-semibold uppercase tracking-[0.3em] text-red-500" data-aos="fade-down">Meet the instructors</h1>
-          <p className="mt-4 text-2xl font-bold tracking-tight text-white sm:text-3xl" data-aos="zoom-in" data-aos-delay="200">Learn from working professionals</p>
-          <p className="mt-4 text-sm leading-8 text-gray-300 sm:text-base" data-aos="fade-up" data-aos-delay="400">Practitioners at top companies who teach what they actually ship.</p>
+        {/* Intro */}
+        <div
+          className="mb-10 text-center"
+          data-aos="fade-up"
+          data-aos-duration="600"
+        >
+          <h1
+            className="text-sm font-semibold uppercase tracking-[0.3em] text-red-500"
+            data-aos="fade-down"
+            data-aos-duration="500"
+          >
+            Meet the instructors
+          </h1>
+
+          <p
+            className="mt-4 text-2xl font-bold tracking-tight text-white sm:text-3xl"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+            data-aos-duration="600"
+          >
+            Learn from working professionals
+          </p>
+
+          <p
+            className="mt-4 text-sm leading-8 text-gray-300 sm:text-base"
+            data-aos="fade-up"
+            data-aos-delay="150"
+            data-aos-duration="600"
+          >
+            Practitioners at top companies who teach what they actually ship.
+          </p>
         </div>
 
+        {/* Trainers Grid */}
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {trainersData.map((trainer, index) => (
-            <div key={trainer.id} data-aos="fade-up" data-aos-delay={index * 150} className="group overflow-hidden rounded-[1.5rem] border border-white/10 bg-gray-900/50 backdrop-blur transition hover:-translate-y-1 hover:border-red-500/40">
+            <div
+              key={trainer.id}
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay={index * 80}
+              className="group overflow-hidden rounded-[1.5rem] border border-white/10 bg-gray-900/50 backdrop-blur transition-all duration-300 hover:-translate-y-2 hover:border-red-500/40"
+            >
               <div className="relative h-56 overflow-hidden bg-gray-800 sm:h-60">
-                <img src={trainer.image} alt={trainer.name} className="h-full w-full object-cover transition duration-300 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-black/20 transition group-hover:bg-black/10" />
+                <img
+                  src={trainer.image}
+                  alt={trainer.name}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/20 transition duration-300 group-hover:bg-black/10" />
               </div>
+
               <div className="p-5 sm:p-6">
-                <h3 className="text-lg font-semibold text-white sm:text-xl">{trainer.name}</h3>
-                <p className="mt-1 text-sm font-semibold text-red-400">{trainer.role}</p>
-                <p className="mt-4 text-sm leading-7 text-gray-400">{trainer.description}</p>
+                <h3 className="text-lg font-semibold text-white transition-colors duration-300 group-hover:text-red-500 sm:text-xl">
+                  {trainer.name}
+                </h3>
+
+                <p className="mt-1 text-sm font-semibold text-red-400">
+                  {trainer.role}
+                </p>
+
+                <p className="mt-4 text-sm leading-7 text-gray-400">
+                  {trainer.description}
+                </p>
+
                 <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-4 text-sm text-gray-400">
                   <span>{trainer.courses} courses</span>
                   <span>{trainer.students.toLocaleString()} students</span>

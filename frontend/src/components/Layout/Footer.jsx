@@ -27,7 +27,7 @@ const Footer = () => {
           <div className="text-center md:text-left">
             <Link to="/" className="inline-flex items-center gap-3">
               <img
-                src="/softnovalogo (2).jpeg"
+                src="/softnovalogo (2).webp"
                 alt="SoftNova Academy"
                 className="h-10 w-10 rounded-full object-cover"
               />
