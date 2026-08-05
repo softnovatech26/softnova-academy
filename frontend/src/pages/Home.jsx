@@ -512,46 +512,6 @@ function Herosection() {
 
 
 
-        {/* RIGHT IMAGE */}
-
-        <div className="relative">
-
-
-          <div className="absolute inset-0 bg-red-600/20 blur-3xl rounded-full"></div>
-
-
-          <img
-            src="/Home.webp"
-            alt="Students"
-            className="
-            relative 
-            rounded-3xl 
-            shadow-2xl
-            w-full
-            h-[550px]
-            object-cover
-            border
-            border-gray-800
-            "
-          />
-
-
-          {/* Floating Card */}
-
-          <div className="absolute top-10 -left-6 bg-black/80 backdrop-blur border border-gray-700 rounded-xl px-5 py-4">
-
-            <h3 className="text-white font-bold">
-              ⭐ 4.9/5 Rating
-            </h3>
-
-            <p className="text-gray-400 text-sm">
-              Student Reviews
-            </p>
-
-          </div>
-
-
-
           <div className="absolute bottom-10 -right-6 bg-red-600 rounded-xl px-6 py-4">
 
             <h3 className="text-white text-2xl font-bold">
@@ -565,7 +525,87 @@ function Herosection() {
           </div>
 
 
-        </div>
+{/* RIGHT IMAGE */}
+
+<div className="relative w-full">
+
+  {/* Background Glow */}
+  <div className="absolute inset-0 hidden lg:block rounded-full bg-red-600/20 blur-3xl"></div>
+
+  {/* Image */}
+  <img
+    src="/Home.webp"
+    alt="Students"
+    className="
+      relative
+      w-full
+      h-auto
+      lg:h-[550px]
+      object-contain
+      lg:object-cover
+      rounded-3xl
+      shadow-2xl
+      border
+      border-gray-800
+      bg-[#0a0a0a]
+    "
+  />
+
+  {/* Rating Card */}
+  <div
+    className="
+      mt-5
+      lg:mt-0
+      lg:absolute
+      lg:top-10
+      lg:-left-6
+      bg-black/80
+      backdrop-blur
+      border
+      border-gray-700
+      rounded-2xl
+      px-5
+      py-4
+      w-full
+      lg:w-auto
+    "
+  >
+    <h3 className="text-white text-xl font-bold">
+      ⭐ 4.9/5 Rating
+    </h3>
+
+    <p className="mt-1 text-gray-400">
+      Student Reviews
+    </p>
+  </div>
+
+  {/* Learners Card */}
+  <div
+    className="
+      mt-4
+      lg:mt-0
+      lg:absolute
+      lg:-bottom-6
+      lg:right-0
+      bg-red-600
+      rounded-2xl
+      px-6
+      py-5
+      w-full
+      lg:w-auto
+      text-white
+    "
+  >
+    <h3 className="text-3xl font-bold">
+      500+
+    </h3>
+
+    <p className="mt-1">
+      Learners
+    </p>
+  </div>
+
+</div>        
 
 
       </div>
