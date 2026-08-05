@@ -511,20 +511,6 @@ function Herosection() {
         </div>
 
 
-
-          <div className="absolute bottom-10 -right-6 bg-red-600 rounded-xl px-6 py-4">
-
-            <h3 className="text-white text-2xl font-bold">
-              500+
-            </h3>
-
-            <p className="text-white text-sm">
-              Learners
-            </p>
-
-          </div>
-
-
 {/* RIGHT IMAGE */}
 
 <div className="relative w-full">
@@ -605,7 +591,9 @@ function Herosection() {
     </p>
   </div>
 
-</div>        
+</div>
+
+        
 
 
       </div>
