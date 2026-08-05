@@ -9,7 +9,7 @@ const app = express();
 // Middleware
 app.use(
   cors({
-    // as jagaha pe humna real domain ka url daal diya hai jisse ki humara backend sirf usi domain se request accept karega.
+    // as jagaha pe humna real domain ka url daal diya hai jisse ki humara backend sirf usi domain se request accept karega....
     origin: [
       "https://softnova-academy-ptb4pfthh-soft-nova-tech-s-projects.vercel.app",
       "https://softnova-academy-tan.vercel.app"
