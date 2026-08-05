@@ -4,18 +4,22 @@ import express from "express";
 import cors from "cors";
 import contactRoutes from "./routes/contactRoutes.js";
 
-
 const app = express();
 
-
 // Middleware
-app.use(cors());
-app.use(express.json());
+app.use(
+  cors({
+    // as jagaha pe humna real domain ka url daal diya hai jisse ki humara backend sirf usi domain se request accept karega.
+    origin: "https://softnova-academy-ptb4pfthh-soft-nova-tech-s-projects.vercel.app",
+    methods: ["GET", "POST"],
+    credentials: true,
+  })
+);
 
+app.use(express.json());
 
 // Routes
 app.use("/api/contact", contactRoutes);
-
 
 // Test Route
 app.get("/", (req, res) => {
@@ -24,7 +28,6 @@ app.get("/", (req, res) => {
     message: "SoftNova Academy Backend is Running 🚀",
   });
 });
-
 
 // Server
 const PORT = process.env.PORT || 5000;
