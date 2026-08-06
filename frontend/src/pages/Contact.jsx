@@ -22,7 +22,7 @@ function Contact() {
 
     try {
       const response = await axios.post(
-        "https://softnova-student-form-production.up.railway.app/api/contact",
+        "https://softnova-academy-production.up.railway.app/api/contact",
         formData
       );
 
