@@ -7,6 +7,7 @@ import contactRoutes from "./routes/contactRoutes.js";
 const app = express();
 
 // Middleware
+app.use(express.json());
 app.use(
   cors({
     // as jagaha pe humna real domain ka url daal diya hai jisse ki humara backend sirf usi domain se request accept karega....
@@ -18,8 +19,6 @@ app.use(
     credentials: true,
   })
 );
-
-app.use(express.json());
 
 // Routes
 app.use("/api/contact", contactRoutes);
