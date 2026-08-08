@@ -20,7 +20,24 @@ export const sendContactMessage = async (req, res) => {
     console.log("Email:", email);
     console.log("Message:", message);
     console.log("----------------------------");
-    
+    console.log("DEBUG ENV : ", process.env.EMAIL_USER, process.env.EMAIL_PASS ? "PASS SET : PASS NOT SET");
+    try {
+      if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
+      await sendAdminEmail({ name, email, message });
+      await sendAutoReply(email, name);
+      console.log("✅ Email sent successfully");
+    } else {
+      console.log("❌ EMAIL_USER or EMAIL_PASS missing in Railway");
+    }
+  } catch (error) {
+    console.error("EMAIL ERROR:", error);
+  }
+
+  res.status(200).json({
+    success: true,
+    message: "Message received successfully",
+  });
+
 
 if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
   console.error("EMAIL_USER or EMAIL_PASS is missing.");
