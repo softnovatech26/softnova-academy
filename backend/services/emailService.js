@@ -2,7 +2,7 @@ import nodemailer from "nodemailer";
 
 
 const transporter = nodemailer.createTransport({
-  host: "softnovatech.pk@gmail.com",
+  host: "smtp.gmail.com",
   port: 587,
   secure: false,
 
