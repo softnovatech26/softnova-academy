@@ -10,10 +10,10 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    // as jagaha pe humna real domain ka url daal diya hai jisse ki humara backend sirf usi domain se request accept karega....
     origin: [
+      "http://localhost:3000",
       "https://softnova-academy-ptb4pfthh-soft-nova-tech-s-projects.vercel.app",
-      "https://softnova-academy-tan.vercel.app"
+      "https://softnova-academy-tan.vercel.app",
     ],
     methods: ["GET", "POST"],
     credentials: true,

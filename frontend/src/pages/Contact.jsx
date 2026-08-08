@@ -18,26 +18,37 @@ function Contact() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      const response = await axios.post(
-        "https://softnova-academy-production.up.railway.app/api/contact",
-        formData
+  try {
+    const response = await axios.post(
+  "https://softnova-academy-production.up.railway.app/api/contact",
+  formData
+);
+
+    setStatus(response.data.message);
+
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+  } catch (error) {
+    console.error("Contact API Error:", error);
+
+    if (error.response) {
+      console.error("Status:", error.response.status);
+      console.error("Data:", error.response.data);
+
+      setStatus(
+        error.response.data.message || "Something went wrong."
       );
-
-      setStatus(response.data.message);
-
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
-      });
-    } catch (error) {
-      setStatus("Something went wrong. Please try again.");
+    } else {
+      console.error(error.message);
+      setStatus(error.message);
     }
-  };
-
+  }
+};
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#0a0a0a] px-3 py-12 text-white sm:px-6 sm:py-16 lg:px-8 lg:py-20">
 
