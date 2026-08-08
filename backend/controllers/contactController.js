@@ -22,39 +22,40 @@ export const sendContactMessage = async (req, res) => {
     console.log("----------------------------");
     
 
-
-    if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
-
-  // Email to SoftNova
-  await sendAdminEmail({
-    name,
-    email,
-    message,
+if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+  console.error("EMAIL_USER or EMAIL_PASS is missing.");
+  return res.status(500).json({
+    success: false,
+    message: "Email service is not configured.",
   });
-
-  // Auto Reply to Student
-  await sendAutoReply({
-    name,
-    email,
-  });
-
-} else {
-
-  console.log("Email credentials not configured. Skipping email sending.");
-
 }
 
+await sendAdminEmail({
+  name,
+  email,
+  message,
+});
+
+await sendAutoReply({
+  name,
+  email,
+});
+
+return res.status(200).json({
+  success: true,
+  message: "Your message and emails were sent successfully.",
+});
     return res.status(200).json({
       success: true,
       message: "Your message has been received successfully.",
     });
 
   } catch (error) {
-    console.error("Email Error:", error);
+  console.error("EMAIL ERROR:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Something went wrong. Please try again later.",
-    });
-  }
+  return res.status(500).json({
+    success: false,
+    message: "Email could not be sent.",
+  });
+}
 };
