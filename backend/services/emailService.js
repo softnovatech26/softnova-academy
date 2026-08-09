@@ -1,135 +1,47 @@
-import nodemailer from "nodemailer";
+import { Resend } from 'resend';
 
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: true,
-
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
-
-
-// Send Email to SoftNova Admin
 export const sendAdminEmail = async ({ name, email, message }) => {
-
-  await transporter.sendMail({
-
-    from: process.env.EMAIL_USER,
-
-    to: process.env.EMAIL_USER,
-
-    subject: "📩 New Contact Form Submission - SoftNova Academy",
-
-    html: `
-      <div style="font-family: Arial, sans-serif; line-height: 1.6;">
-
-        <h2 style="color:#dc2626;">
-          New Contact Form Submission
-        </h2>
-
-        <hr/>
-
-        <p>
-          <strong>Name:</strong> ${name}
-        </p>
-
-        <p>
-          <strong>Email:</strong> ${email}
-        </p>
-
-        <p>
-          <strong>Message:</strong>
-        </p>
-
-        <p>
-          ${message}
-        </p>
-
-        <hr/>
-
-        <p>
-          This message was submitted through SoftNova Academy website contact form.
-        </p>
-
-      </div>
-    `,
-
-  });
-
+  try {
+    const data = await resend.emails.send({
+      from: `SoftNova Website <${process.env.EMAIL_FROM}>`,
+      to: ['softnovatech.pk@gmail.com'], // yahan apna admin email daalo
+      subject: `New Contact Form: ${name}`,
+      html: `
+        <h2>New Message Received</h2>
+        <p><b>Name:</b> ${name}</p>
+        <p><b>Email:</b> ${email}</p>
+        <p><b>Message:</b></p>
+        <p>${message}</p>
+      `,
+    });
+    console.log("✅ Admin email sent:", data.id);
+    return data;
+  } catch (error) {
+    console.error("❌ Admin Email Error:", error);
+    throw error;
+  }
 };
 
-
-
-// Auto Reply to Student
-export const sendAutoReply = async ({ name, email }) => {
-
-  await transporter.sendMail({
-
-    from: process.env.EMAIL_USER,
-
-    to: email,
-
-    subject: "Thank You for Contacting SoftNova Academy",
-
-    html: `
-      <div style="font-family: Arial, sans-serif; line-height:1.6; color:#333;">
-
-        <h2 style="color:#dc2626;">
-          Hello ${name},
-        </h2>
-
-
-        <p>
-          Thank you for contacting 
-          <strong>SoftNova Academy</strong>.
-        </p>
-
-
-        <p>
-          We have successfully received your message through our website contact form.
-        </p>
-
-
-        <p>
-          Our team has been notified and will review your inquiry carefully.
-          We will contact you soon with the required information and guidance.
-        </p>
-
-
-        <p>
-          If your query is related to courses, internships, admissions,
-          or any of our programs, our team will assist you.
-        </p>
-
-
+export const sendAutoReply = async (to, name) => {
+  try {
+    const data = await resend.emails.send({
+      from: `SoftNovaTech <${process.env.EMAIL_FROM}>`,
+      to: [to], // user ka email
+      subject: "Thanks for contacting SoftNovaTech!",
+      html: `
+        <h2>Hi ${name},</h2>
+        <p>Thanks for reaching out to us!</p>
+        <p>We have received your message and our team will get back to you within 24 hours.</p>
         <br/>
-
-
-        <p>
-          We appreciate your interest in SoftNova Academy.
-        </p>
-
-
-        <br/>
-
-
-        <p>
-          Regards,
-        </p>
-
-
-        <h3 style="color:#dc2626;">
-          SoftNova Academy Team
-        </h3>
-
-
-      </div>
-    `,
-
-  });
-
+        <p>Regards,<br/>Team SoftNovaTech</p>
+      `,
+    });
+    console.log("✅ Auto-reply sent:", data.id);
+    return data;
+  } catch (error) {
+    console.error("❌ Auto-reply Error:", error);
+    throw error;
+  }
 };
