@@ -17,15 +17,7 @@ export const sendContactMessage = async (req, res) => {
     console.log("Email:", email);
     console.log("Message:", message);
     console.log("----------------------------");
-    console.log("DEBUG ENV : ", process.env.EMAIL_USER, process.env.EMAIL_PASS ? "PASS SET" : "PASS NOT SET");
-
-    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-      console.error("❌ EMAIL_USER or EMAIL_PASS missing in Railway");
-      return res.status(500).json({
-        success: false,
-        message: "Email service is not configured.",
-      });
-    }
+    console.log("DEBUG ENV : ", process.env.RESEND_API_KEY ? "RESEND KEY SET" : "RESEND KEY NOT SET");
 
     await sendAdminEmail({ name, email, message });
     await sendAutoReply(email, name);
