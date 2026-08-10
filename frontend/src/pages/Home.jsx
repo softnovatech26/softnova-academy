@@ -7,6 +7,7 @@ import card3_img from "../assets/images/card3.webp";
 import Bhavish from "../assets/images/Bhavish .webp";
 import areeba from "../assets/images/Areeba.webp";
 import Sammad from "../assets/images/sammad.webp";
+import Samreen from "../assets/images/samreen .jpeg";
 import Community_img1 from "../assets/images/class 1.webp";
 import Community_img2 from "../assets/images/class 2.webp";
 import Community_img3 from "../assets/images/class 3.webp";
@@ -100,6 +101,14 @@ const instructors = [
     students: "80",
     image: Sammad,
   },
+  {
+  name: "Samreen",
+  role: "Instructor",
+  bio: "Experienced instructor and mentor.",
+  courses: 1,
+  students: "100",
+  image: Samreen,
+},
 ];
 
 const communityImages = [
@@ -203,7 +212,7 @@ const Home = () => {
               </button>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
               {courses.map((course) => (
                 <div key={course.id} className="group bg-[#141414] rounded-2xl overflow-hidden shadow-lg border border-gray-800 transition-all duration-500 hover:-translate-y-2 sm:hover:-translate-y-3 hover:shadow-red-500/20">
                   <div className="relative overflow-hidden">
@@ -285,7 +294,7 @@ const Home = () => {
                 <div key={instructor.name} className="group relative overflow-hidden rounded-2xl bg-[oklch(14%_.02_20)] border border-gray-800 transition-all duration-300 hover:-translate-y-2 hover:border-red-600 hover:shadow-red-500/20 hover:shadow-lg">
                   <div className="relative aspect-[3/3] w-full overflow-hidden">
                     <img src={instructor.image} alt={instructor.name} loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                      className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-110"/>
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
                     <div className="absolute inset-x-0 bottom-0 p-5">
                       <h3 className="text-lg font-bold text-white">
