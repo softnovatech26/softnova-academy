@@ -4,11 +4,9 @@ import { useNavigate } from "react-router-dom";
 import card1_img from "../assets/images/card_1_img.webp";
 import card2_img from "../assets/images/card_2_img.webp";
 import card3_img from "../assets/images/card3.webp";
-import card4_img from "../assets/images/card4.webp";
-import First_instr from "../assets/images/first_instr.webp";
-import Second_instr from "../assets/images/second_instr.webp";
-import Third_instr from "../assets/images/third_instr.webp";
-import Fourth_instr from "../assets/images/fourth_instr.webp";
+import Bhavish from "../assets/images/Bhavish .webp";
+import areeba from "../assets/images/Areeba.webp";
+import Sammad from "../assets/images/sammad.webp";
 import Community_img1 from "../assets/images/class 1.webp";
 import Community_img2 from "../assets/images/class 2.webp";
 import Community_img3 from "../assets/images/class 3.webp";
@@ -40,13 +38,13 @@ const courses = [
     category: "Web Development",
     image: card3_img,
   },
-  {
-    id: 4,
-    name: "Tailwind CSS Development",
-    trainer: "Sarah Ahmed",
-    category: "Design",
-    image: card4_img,
-  },
+{
+  id: 4,
+  name: "Artificial Intelligence",
+  trainer: "Dr. Alex Kumar",
+  category: "Artificial Intelligence",
+  image: "/ai.jfif",
+},
 ];
 
 const steps = [
@@ -79,36 +77,28 @@ const steps = [
 
 const instructors = [
   {
-    name: "Sara Martin",
-    role: "Senior Frontend Engineer",
-    bio: "10+ years shipping React apps at scale. Ex-Meta.",
-    courses: 12,
-    students: "48,000",
-    image: First_instr,
+    name: "Bhavish Kumar",
+    role: "AI & React instructor",
+    bio: "2+ years AI and React development experience.",
+    courses: 2,
+    students: "300",
+    image: Bhavish,
   },
   {
-    name: "Daniel Cho",
-    role: "Product Designer",
-    bio: "Design lead building interfaces for millions of users.",
-    courses: 8,
-    students: "32,000",
-    image: Second_instr,
+    name: "Areeba Siddique",
+    role: "React Native Instructor",
+    bio: "3+ years of experience in mobile app development with React Native.",
+    courses: 1,
+    students: "400",
+    image: areeba,
   },
   {
-    name: "Amelia Rossi",
-    role: "Data Scientist",
-    bio: "PhD in ML, working on applied AI for healthcare.",
-    courses: 6,
-    students: "41,000",
-    image: Third_instr,
-  },
-  {
-    name: "Lucas Bennett",
-    role: "Growth Marketer",
-    bio: "Scaled 3 startups from zero to Series B.",
-    courses: 5,
-    students: "22,000",
-    image: Fourth_instr,
+    name: "Sammad UL Hassan",
+    role: "React JS instructor",
+    bio: "1+ years of experience in web development with React JS.",
+    courses: 1,
+    students: "80",
+    image: Sammad,
   },
 ];
 
@@ -213,7 +203,7 @@ const Home = () => {
               </button>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {courses.map((course) => (
                 <div key={course.id} className="group bg-[#141414] rounded-2xl overflow-hidden shadow-lg border border-gray-800 transition-all duration-500 hover:-translate-y-2 sm:hover:-translate-y-3 hover:shadow-red-500/20">
                   <div className="relative overflow-hidden">
@@ -232,9 +222,14 @@ const Home = () => {
                         {course.trainer}
                       </span>
                     </p>
-                    <button className="w-full bg-red-600 text-white py-2.5 sm:py-3 text-sm sm:text-base rounded-lg font-semibold border border-gray-700 transition-all duration-300 hover:bg-black hover:border-blue-600 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/20">
-                      Enroll Now
-                    </button>
+                   <button
+  onClick={() =>
+    window.open("https://softnova-student-form.vercel.app/", "_blank")
+  }
+  className="w-full bg-red-600 text-white py-2.5 sm:py-3 text-sm sm:text-base rounded-lg font-semibold border border-gray-700 transition-all duration-300 hover:bg-black hover:border-blue-600 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/20"
+>
+  Enroll Now
+</button>
                   </div>
                 </div>
               ))}

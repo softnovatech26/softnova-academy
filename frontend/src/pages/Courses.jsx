@@ -73,9 +73,16 @@ function Courses() {
                   </div>
                 </div>
 
-                <button className="mt-6 w-full rounded-full bg-red-500 px-4 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-red-600 hover:scale-[1.02]">
-                  Enroll Now
-                </button>
+                <button
+  onClick={(e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    window.open("https://softnova-student-form.vercel.app/", "_blank");
+  }}
+  className="mt-6 w-full rounded-full bg-red-500 px-4 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-red-600 hover:scale-[1.02]"
+>
+  Enroll Now
+</button>
               </div>
             </Link>
           ))}
