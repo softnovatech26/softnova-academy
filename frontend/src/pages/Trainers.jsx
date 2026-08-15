@@ -10,11 +10,11 @@ const trainersData = [
   { id: 1, name: "Bhavish Kumar", role: "AI & React instructor", image: Bhavish, description: "2+ years AI and React development experience.", courses: 2, students: 300 },
   { id: 2, name: "Areeba Siddique", role: "React Native Instructor", image: areeba, description: "3+ years of experience in mobile app development with React Native.", courses: 1, students: 400 },
   { id: 3, name: "Sammad UL Hassan", role: "React JS instructor", image: Sammad, description: "1+ years of experience in web development with React JS.", courses: 1, students: 80 },
-  { id: 4, name: "Samreen", role: "Instructor", image: Samreen, description: "Scaled 3 startups from zero to Series B.", courses: 5, students: 22000 },
-  { id: 5, name: "Emily Johnson", role: "Full Stack Developer", image: "/teacher5.jfif", description: "Expert in MERN stack and building scalable web applications.", courses: 10, students: 35000 },
-  { id: 6, name: "Michael Anderson", role: "Python & AI Trainer", image: "/teacher6.jfif", description: "AI specialist teaching Python, ML, and real-world projects.", courses: 9, students: 29000 },
-  { id: 7, name: "Sophia Williams", role: "Cloud Engineer", image: "/teacher7.jfif", description: "Cloud expert helping students master modern technologies.", courses: 7, students: 27000 },
-  { id: 8, name: "James Wilson", role: "Backend Engineer", image: "/teacher8.jfif", description: "Backend specialist focused on APIs and databases.", courses: 11, students: 39000 },
+  { id: 4, name: "Samreen Shahzadi", role: "Artificial Intelligence & Data Science Instructor", image: Samreen, description: "Expert in AI and data science with a focus on real-world applications.", courses: 2, students: 50 },
+  // { id: 5, name: "Emily Johnson", role: "Full Stack Developer", image: "/teacher5.jfif", description: "Expert in MERN stack and building scalable web applications.", courses: 10, students: 35000 },
+  // { id: 6, name: "Michael Anderson", role: "Python & AI Trainer", image: "/teacher6.jfif", description: "AI specialist teaching Python, ML, and real-world projects.", courses: 9, students: 29000 },
+  // { id: 7, name: "Sophia Williams", role: "Cloud Engineer", image: "/teacher7.jfif", description: "Cloud expert helping students master modern technologies.", courses: 7, students: 27000 },
+  // { id: 8, name: "James Wilson", role: "Backend Engineer", image: "/teacher8.jfif", description: "Backend specialist focused on APIs and databases.", courses: 11, students: 39000 },
 ];
 
 function Trainers() {

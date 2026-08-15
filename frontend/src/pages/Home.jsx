@@ -102,11 +102,11 @@ const instructors = [
     image: Sammad,
   },
   {
-  name: "Samreen",
-  role: "Instructor",
-  bio: "Experienced instructor and mentor.",
-  courses: 1,
-  students: "100",
+  name: "Samreen Shahzadi",
+  role: "Artificial Intelligence & Data Science Instructor",
+  bio: "Expert in AI and data science with a focus on real-world applications.",
+  courses: 2,
+  students: "50",
   image: Samreen,
 },
 ];

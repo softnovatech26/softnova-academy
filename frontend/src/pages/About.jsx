@@ -10,28 +10,46 @@ import iqra from "../assets/images/Iqra.webp";
 import Aree from "../assets/images/Areeba.webp";
 import ourMission from "../assets/images/our mission.webp";
 import ourVision from "../assets/images/our vission.webp";
+import Areeba from "../assets/images/Areeba Ajaz.webp";
+import Meer from "../assets/images/Meer.webp";
+import bhavish from "../assets/images/Bhavish .webp";
 
 function About() {
   const teamMembers = [
     {
       name: "Haseeb UL Hassan",
-      role: "Founder & CEO",
+      role: "Founder & CEO ",
       image: haseeb,
     },
     {
       name: "Khadeeja Zafar",
-      role: "HR & Marketing Manager",
+      role: "Human Resources & Marketing Team Leader",
       image: khadeeja,
     },
     {
       name: "Areeba Siddique",
-      role: "Web Team Leader",
+      role: "Web Team Leader & React Developer",
       image: Aree,
     },
     {
-      name: "Hira Rajput",
+      name: "Areeba Ajaz",
       role: "Marketing Executive",
+      image: Areeba,
+    },
+    {
+      name: "Hira Rajput",
+      role: "Marketing Executive & wordpress Developer",
       image: Hira,
+    },
+    {
+      name: "Meer Muhammad",
+      role: "Social Media Executive",
+      image: Meer,
+    },
+    {
+      name: "Bhavish Kumar ",
+      role: "React Developer & AI Developer",
+      image: bhavish,
     },
     {
       name: "Seema Sibyani",
