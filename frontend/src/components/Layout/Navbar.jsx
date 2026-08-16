@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Logo from "../../assets/images/softnova-logo.webp";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
@@ -23,10 +24,10 @@ function Navbar() {
         <Link to="/" className="flex min-w-0 items-center gap-2 sm:gap-3" onClick={closeMenu}>
           <div className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-full bg-white/10 p-1 sm:h-12 sm:w-12">
             <img
-              src="/softnova-logo.webp"
-              alt="SoftNova Academy"
-              className="h-full w-full rounded-full object-cover"
-            />
+              src={Logo}
+             alt="SoftNova Academy"
+                   className="h-full w-full rounded-full object-cover"
+                 />
           </div>
           <div className="min-w-0">
             <h2 className="truncate text-[0.95rem] font-bold text-white sm:text-lg lg:text-xl">
