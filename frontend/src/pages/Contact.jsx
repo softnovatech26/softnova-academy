@@ -67,7 +67,7 @@ function Contact() {
             data-aos="fade-down"
             data-aos-duration="800"
           >
-            Contact Us
+            Apply Now
           </span>
 
           <h1
@@ -80,6 +80,7 @@ function Contact() {
             <span className="text-red-500">
               SoftNova
             </span>
+            <spant className="text-white">Academy</spant>
           </h1>
 
           <p
@@ -88,8 +89,7 @@ function Contact() {
             data-aos-delay="150"
             data-aos-duration="600"
           >
-            Have questions about our courses, internships, or programs?
-            Contact our team and we will help you.
+            Student Registration Portal
           </p>
         </div>
 
@@ -109,43 +109,87 @@ function Contact() {
 
             <div className="space-y-4">
 
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <div className="group relative rounded-3xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-xl shadow-xl transform transition duration-500 hover:-translate-y-4 hover:shadow-red-900/40 p-6">
                 <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-red-500">
                   Email
                 </h3>
                 <p className="mt-2 text-sm text-gray-400">
-                  info@softnova.com
+                  
+                  softnovatech.pk@gmail.com
                 </p>
               </div>
 
 
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <div className="group relative rounded-3xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-xl shadow-xl transform transition duration-500 hover:-translate-y-4 hover:shadow-red-900/40 p-6">
                 <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-red-500">
                   Phone
                 </h3>
                 <p className="mt-2 text-sm text-gray-400">
-                  +92 300 1234567
+                  +92 3143494348
                 </p>
               </div>
 
 
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-red-500">
-                  Address
-                </h3>
-                <p className="mt-2 text-sm text-gray-400">
-                  Hyderabad, Pakistan
-                </p>
-              </div>
+               <div className="group relative rounded-3xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-xl shadow-xl transform transition duration-500 hover:-translate-y-4 hover:shadow-red-900/40 p-6">
+              <h3 className="text-xl font-semibold mb-2">Visit Us</h3>
 
+              <a
+                href="https://maps.google.com/?q=Sindh,Pakistan"
+                target="_blank"
+                rel="noreferrer"
+                className="text-red-600 hover:underline block"
+              >
+               
+              </a>
+
+              <a
+                href="https://www.facebook.com/softnova.tech"
+                target="_blank"
+                rel="noreferrer"
+                className="text-red-600 hover:underline block"
+              >
+                Facebook
+              </a>
+
+              <a
+                href="https://www.instagram.com/softnova.tech"
+                target="_blank"
+                rel="noreferrer"
+                className="text-red-600 hover:underline block"
+              >
+                Instagram
+              </a>
+
+              <a
+                href="https://www.linkedin.com/company/soft-nova-tech"
+                target="_blank"
+                rel="noreferrer"
+                className="text-red-600 hover:underline block"
+              >
+                LinkedIn
+              </a>
+
+              <a
+                href="https://x.com/SoftNova94"
+                target="_blank"
+                rel="noreferrer"
+                className="text-red-600 hover:underline block"
+              >
+                Twitter
+              </a>
+
+              <div>SoftNova Tech Based,Pakistan</div>
             </div>
+
+          </div>
+
           </div>
 
 
 
           {/* Form */}
           <div
-            className="rounded-[1.5rem] border border-white/10 bg-[#141414] p-4 sm:p-6 lg:p8"
+            className="rounded-[1.5rem] border border-white/10 bg-[#141414] p-4 sm:p-6 lg:p8 group relative rounded-3xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-xl shadow-xl transform transition duration-500 hover:-translate-y-4 hover:shadow-red-900/40 p-6"
             data-aos="fade-left"
             data-aos-duration="700"
           >
