@@ -1,258 +1,442 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useSearchParams } from "react-router-dom";
+import { courses } from "../data/courses";
 
 function Contact() {
+  const [searchParams] = useSearchParams();
+
   const [formData, setFormData] = useState({
-    name: "",
+    fullName: "",
+    fatherName: "",
     email: "",
+    phone: "",
+    city: "",
+    course: "",
+    qualification: "",
+    paymentMethod: "",
+    paymentAmount: "",
+    transactionId: "",
     message: "",
+    paymentScreenshot: null,
   });
 
   const [status, setStatus] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  // Automatically select course when coming from "Enroll Now"
+  useEffect(() => {
+    const selectedCourse = searchParams.get("course");
+
+    if (selectedCourse) {
+      setFormData((prev) => ({
+        ...prev,
+        course: selectedCourse,
+      }));
+    }
+  }, [searchParams]);
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value, files } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: files ? files[0] : value,
+    }));
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  try {
-    const response = await axios.post(
-  "https://softnova-academy-production.up.railway.app/api/contact",
-  formData
-);
+    setLoading(true);
+    setStatus("");
 
-    setStatus(response.data.message);
+    try {
+      const data = new FormData();
 
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
-  } catch (error) {
-    console.error("Contact API Error:", error);
+      Object.keys(formData).forEach((key) => {
+        if (formData[key] !== null) {
+          data.append(key, formData[key]);
+        }
+      });
 
-    if (error.response) {
-      console.error("Status:", error.response.status);
-      console.error("Data:", error.response.data);
+      const response = await axios.post(
+        "https://softnova-academy-production.up.railway.app/api/contact",
+        data
+      );
 
       setStatus(
-        error.response.data.message || "Something went wrong."
+        response.data.message ||
+          "Registration submitted successfully!"
       );
-    } else {
-      console.error(error.message);
-      setStatus(error.message);
+
+      setFormData({
+        fullName: "",
+        fatherName: "",
+        email: "",
+        phone: "",
+        city: "",
+        course: "",
+        qualification: "",
+        paymentMethod: "",
+        paymentAmount: "",
+        transactionId: "",
+        message: "",
+        paymentScreenshot: null,
+      });
+
+      document.getElementById("registration-form")?.reset();
+    } catch (error) {
+      console.error("Registration Error:", error);
+
+      setStatus(
+        error.response?.data?.message ||
+          "Something went wrong. Please try again."
+      );
+    } finally {
+      setLoading(false);
     }
-  }
-};
+  };
+
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#0a0a0a] px-3 py-12 text-white sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-red-500/40 via-transparent to-transparent" />
 
-      <section className="relative z-10 mx-auto max-w-7xl">
+      <section className="relative z-10 mx-auto max-w-6xl">
 
         {/* Header */}
         <div
-          className="mb-12 text-center sm:mb-16"
+          className="mb-10 text-center sm:mb-14"
           data-aos="zoom-in"
-          data-aos-duration="1000"
+          data-aos-duration="800"
         >
-          <span
-            className="rounded-full border border-red-600/60 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-red-400"
-            data-aos="fade-down"
-            data-aos-duration="800"
-          >
-            Apply Now
+          <span className="inline-block rounded-full border border-red-600/60 px-5 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-red-400">
+            Apply For Registration
           </span>
 
-          <h1
-            className="mt-6 text-2xl font-bold sm:text-3xl md:text-4xl lg:text-6xl"
-            data-aos="fade-up"
-            data-aos-delay="100"
-            data-aos-duration="600"
-          >
-            Get in touch with{" "}
+          <h1 className="mt-6 text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">
+            Join{" "}
             <span className="text-red-500">
               SoftNova
-            </span>
-            <spant className="text-white">Academy</spant>
+            </span>{" "}
+            Academy
           </h1>
 
-          <p
-            className="mx-auto mt-5 max-w-2xl text-sm leading-8 text-gray-400 sm:text-base"
-            data-aos="fade-up"
-            data-aos-delay="150"
-            data-aos-duration="600"
-          >
-            Student Registration Portal
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-gray-400 sm:text-base">
+            Complete the registration form below to apply for your
+            selected course.
           </p>
         </div>
 
-
-        {/* Contact Grid */}
-        <div className="grid gap-8 lg:grid-cols-2">
-
-          {/* Contact Info */}
-          <div
-            className="rounded-[1.5rem] border border-white/10 bg-[#141414] p-4 sm:p-6 lg:p-8"
-            data-aos="fade-right"
-            data-aos-duration="700"
+        {/* Registration Form */}
+        <div
+          className="rounded-[2rem] border border-white/10 bg-[#111111]/90 p-4 shadow-2xl backdrop-blur-xl sm:p-6 md:p-8 lg:p-10"
+          data-aos="fade-up"
+          data-aos-duration="800"
+        >
+          <form
+            id="registration-form"
+            onSubmit={handleSubmit}
+            className="space-y-8"
           >
-            <h2 className="mb-6 text-2xl font-semibold">
-              Contact Information
-            </h2>
 
-            <div className="space-y-4">
+            {/* Personal Information */}
+            <section>
+              <div className="mb-6">
+                <h2 className="text-xl font-bold sm:text-2xl">
+                  Personal Information
+                </h2>
+                <div className="mt-2 h-1 w-16 rounded-full bg-red-500" />
+              </div>
 
-              <div className="group relative rounded-3xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-xl shadow-xl transform transition duration-500 hover:-translate-y-4 hover:shadow-red-900/40 p-6">
-                <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-red-500">
-                  Email
+              <div className="grid gap-5 md:grid-cols-2">
+
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-gray-300">
+                    Full Name *
+                  </label>
+
+                  <input
+                    type="text"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    required
+                    placeholder="Enter your full name"
+                    className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-sm text-white outline-none transition focus:border-red-500"
+                  />
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-gray-300">
+                    Father Name *
+                  </label>
+
+                  <input
+                    type="text"
+                    name="fatherName"
+                    value={formData.fatherName}
+                    onChange={handleChange}
+                    required
+                    placeholder="Enter father's name"
+                    className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-sm text-white outline-none transition focus:border-red-500"
+                  />
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-gray-300">
+                    Email *
+                  </label>
+
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    placeholder="example@gmail.com"
+                    className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-sm text-white outline-none transition focus:border-red-500"
+                  />
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-gray-300">
+                    Phone Number *
+                  </label>
+
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                    placeholder="+92 3XX XXXXXXX"
+                    className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-sm text-white outline-none transition focus:border-red-500"
+                  />
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-gray-300">
+                    City *
+                  </label>
+
+                  <input
+                    type="text"
+                    name="city"
+                    value={formData.city}
+                    onChange={handleChange}
+                    required
+                    placeholder="Enter your city"
+                    className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-sm text-white outline-none transition focus:border-red-500"
+                  />
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-gray-300">
+                    Qualification *
+                  </label>
+
+                  <input
+                    type="text"
+                    name="qualification"
+                    value={formData.qualification}
+                    onChange={handleChange}
+                    required
+                    placeholder="e.g. Intermediate, BSCS"
+                    className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-sm text-white outline-none transition focus:border-red-500"
+                  />
+                </div>
+
+              </div>
+            </section>
+
+            {/* Course Information */}
+            <section>
+              <div className="mb-6">
+                <h2 className="text-xl font-bold sm:text-2xl">
+                  Course Information
+                </h2>
+                <div className="mt-2 h-1 w-16 rounded-full bg-red-500" />
+              </div>
+
+              <div>
+                <label className="mb-2 block text-sm font-medium text-gray-300">
+                  Select Course *
+                </label>
+
+                <select
+                  name="course"
+                  value={formData.course}
+                  onChange={handleChange}
+                  required
+                  className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-sm text-white outline-none transition focus:border-red-500"
+                >
+                  <option value="" className="bg-[#111111]">
+                    Select a course
+                  </option>
+
+                  {courses.map((course) => (
+                    <option
+                      key={course.id}
+                      value={course.title}
+                      className="bg-[#111111]"
+                    >
+                      {course.title}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </section>
+
+            {/* Payment Information */}
+            <section>
+              <div className="mb-6">
+                <h2 className="text-xl font-bold sm:text-2xl">
+                  Payment Information
+                </h2>
+                <div className="mt-2 h-1 w-16 rounded-full bg-red-500" />
+              </div>
+
+              <div className="mb-6 rounded-2xl border border-red-500/20 bg-red-500/5 p-5">
+                <h3 className="font-semibold text-red-400">
+                  Payment Instructions
                 </h3>
-                <p className="mt-2 text-sm text-gray-400">
-                  
-                  softnovatech.pk@gmail.com
+
+                <p className="mt-3 text-sm leading-7 text-gray-400">
+                  Complete your course payment using your preferred
+                  payment method. After payment, enter your transaction
+                  details and upload the payment screenshot below.
                 </p>
               </div>
 
+              <div className="grid gap-5 md:grid-cols-2">
 
-              <div className="group relative rounded-3xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-xl shadow-xl transform transition duration-500 hover:-translate-y-4 hover:shadow-red-900/40 p-6">
-                <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-red-500">
-                  Phone
-                </h3>
-                <p className="mt-2 text-sm text-gray-400">
-                  +92 3143494348
-                </p>
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-gray-300">
+                    Payment Method *
+                  </label>
+
+                  <select
+                    name="paymentMethod"
+                    value={formData.paymentMethod}
+                    onChange={handleChange}
+                    required
+                    className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-sm text-white outline-none transition focus:border-red-500"
+                  >
+                    <option value="" className="bg-[#111111]">
+                      Select payment method
+                    </option>
+
+                    <option value="EasyPaisa" className="bg-[#111111]">
+                      EasyPaisa
+                    </option>
+
+                    <option value="JazzCash" className="bg-[#111111]">
+                      JazzCash
+                    </option>
+
+                    <option value="Bank Transfer" className="bg-[#111111]">
+                      Bank Transfer
+                    </option>
+
+                    <option value="Other" className="bg-[#111111]">
+                      Other
+                    </option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-gray-300">
+                    Payment Amount *
+                  </label>
+
+                  <input
+                    type="number"
+                    name="paymentAmount"
+                    value={formData.paymentAmount}
+                    onChange={handleChange}
+                    required
+                    placeholder="Enter amount"
+                    className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-sm text-white outline-none transition focus:border-red-500"
+                  />
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-gray-300">
+                    Transaction ID *
+                  </label>
+
+                  <input
+                    type="text"
+                    name="transactionId"
+                    value={formData.transactionId}
+                    onChange={handleChange}
+                    required
+                    placeholder="Enter transaction ID"
+                    className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-sm text-white outline-none transition focus:border-red-500"
+                  />
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-gray-300">
+                    Payment Screenshot *
+                  </label>
+
+                  <input
+                    type="file"
+                    name="paymentScreenshot"
+                    accept="image/png,image/jpeg,image/jpg,image/webp"
+                    onChange={handleChange}
+                    required
+                    className="w-full rounded-xl border border-white/10 bg-black/50 px-3 py-3 text-sm text-gray-400 file:mr-4 file:rounded-lg file:border-0 file:bg-red-500 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white hover:file:bg-red-600"
+                  />
+
+                  <p className="mt-2 text-xs text-gray-500">
+                    PNG, JPG or WEBP image only.
+                  </p>
+                </div>
+
               </div>
+            </section>
 
-
-               <div className="group relative rounded-3xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-xl shadow-xl transform transition duration-500 hover:-translate-y-4 hover:shadow-red-900/40 p-6">
-              <h3 className="text-xl font-semibold mb-2">Visit Us</h3>
-
-              <a
-                href="https://maps.google.com/?q=Sindh,Pakistan"
-                target="_blank"
-                rel="noreferrer"
-                className="text-red-600 hover:underline block"
-              >
-               
-              </a>
-
-              <a
-                href="https://www.facebook.com/softnova.tech"
-                target="_blank"
-                rel="noreferrer"
-                className="text-red-600 hover:underline block"
-              >
-                Facebook
-              </a>
-
-              <a
-                href="https://www.instagram.com/softnova.tech"
-                target="_blank"
-                rel="noreferrer"
-                className="text-red-600 hover:underline block"
-              >
-                Instagram
-              </a>
-
-              <a
-                href="https://www.linkedin.com/company/soft-nova-tech"
-                target="_blank"
-                rel="noreferrer"
-                className="text-red-600 hover:underline block"
-              >
-                LinkedIn
-              </a>
-
-              <a
-                href="https://x.com/SoftNova94"
-                target="_blank"
-                rel="noreferrer"
-                className="text-red-600 hover:underline block"
-              >
-                Twitter
-              </a>
-
-              <div>SoftNova Tech Based,Pakistan</div>
-            </div>
-
-          </div>
-
-          </div>
-
-
-
-          {/* Form */}
-          <div
-            className="rounded-[1.5rem] border border-white/10 bg-[#141414] p-4 sm:p-6 lg:p8 group relative rounded-3xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-xl shadow-xl transform transition duration-500 hover:-translate-y-4 hover:shadow-red-900/40 p-6"
-            data-aos="fade-left"
-            data-aos-duration="700"
-          >
-            <h2 className="mb-6 text-2xl font-semibold">
-              Send Message
-            </h2>
-
-            <form
-              onSubmit={handleSubmit}
-              className="space-y-4"
-            >
-
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Your Name"
-                className="w-full rounded-2xl border border-white/10 bg-black/60 px-4 py-3 text-sm text-white outline-none transition focus:border-red-500"
-              />
-
-
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Your Email"
-                className="w-full rounded-2xl border border-white/10 bg-black/60 px-4 py-3 text-sm text-white outline-none transition focus:border-red-500"
-              />
-
+            {/* Message */}
+            <div>
+              <label className="mb-2 block text-sm font-medium text-gray-300">
+                Additional Message
+              </label>
 
               <textarea
-                rows="5"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="Your Message"
-                className="w-full rounded-2xl border border-white/10 bg-black/60 px-4 py-3 text-sm text-white outline-none transition focus:border-red-500"
+                rows="4"
+                placeholder="Any additional information..."
+                className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-sm text-white outline-none transition focus:border-red-500"
               />
+            </div>
 
-
+            {/* Submit */}
+            <div>
               <button
                 type="submit"
-                className="w-full rounded-full bg-red-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-red-700"
+                disabled={loading}
+                className="w-full rounded-full bg-red-600 px-6 py-4 text-sm font-bold text-white transition-all duration-300 hover:scale-[1.01] hover:bg-red-700 disabled:cursor-not-allowed disabled:opacity-60"
               >
-                Send Message
+                {loading
+                  ? "Submitting Registration..."
+                  : "Submit Registration"}
               </button>
 
-
               {status && (
-                <p className="text-center text-sm text-red-400">
+                <div className="mt-5 rounded-xl border border-red-500/20 bg-red-500/5 p-4 text-center text-sm text-red-400">
                   {status}
-                </p>
+                </div>
               )}
+            </div>
 
-            </form>
-          </div>
-
+          </form>
         </div>
-
       </section>
-
     </main>
   );
 }

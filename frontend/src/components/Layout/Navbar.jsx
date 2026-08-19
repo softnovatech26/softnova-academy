@@ -13,7 +13,7 @@ function Navbar() {
     { to: "/gallery", label: "Gallery" },
     { to: "/projects", label: "Projects" },
     { to: "/about", label: "About" },
-    { to: "/contact", label: "Contact" },
+    { to: "/contact", label: "Register Now" },
   ];
 
   const closeMenu = () => setIsMenuOpen(false);
