@@ -363,18 +363,16 @@ function Contact() {
 
                 <div>
                   <label className="mb-2 block text-sm font-medium text-gray-300">
-                    Transaction ID *
-                  </label>
-
-                  <input
-                    type="text"
-                    name="transactionId"
-                    value={formData.transactionId}
-                    onChange={handleChange}
-                    required
-                    placeholder="Enter transaction ID"
-                    className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-sm text-white outline-none transition focus:border-red-500"
-                  />
+                         Transaction ID (Optional)
+                     </label>
+                 <input
+                 type="text"
+                   name="transactionId"
+                 value={formData.transactionId}
+                  onChange={handleChange}
+               placeholder="Enter transaction ID (Optional)"
+            className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-sm text-white outline-none transition focus:border-red-500"
+                          />
                 </div>
 
                 <div>
