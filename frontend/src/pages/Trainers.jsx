@@ -2,7 +2,7 @@ import React from "react";
 import Bhavish from "../assets/images/Bhavish .webp";
 import areeba from "../assets/images/Areeba.webp";
 import Sammad from "../assets/images/sammad.webp";
-import Samreen from "../assets/images/samreen .jpeg";
+import Samreen from "../assets/images/samreen.webp";
 
 // BOOM charc foce push
 
