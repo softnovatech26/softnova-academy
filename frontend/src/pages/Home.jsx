@@ -7,7 +7,7 @@ import card3_img from "../assets/images/card3.webp";
 import Bhavish from "../assets/images/Bhavish .webp";
 import areeba from "../assets/images/Areeba.webp";
 import Sammad from "../assets/images/sammad.webp";
-import Samreen from "../assets/images/samreen .jpeg";
+import Samreen from "../assets/images/samreen.webp";
 import Community_img1 from "../assets/images/class 1.webp";
 import Community_img2 from "../assets/images/class 2.webp";
 import Community_img3 from "../assets/images/class 3.webp";
