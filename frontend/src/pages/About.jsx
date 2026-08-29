@@ -14,6 +14,7 @@ import Areeba from "../assets/images/Areeba Ajaz.webp";
 import Meer from "../assets/images/Meer.webp";
 import bhavish from "../assets/images/Bhavish .webp";
 import samreen from "../assets/images/samreen.webp";
+import sammad from "../assets/images/sammad.webp";
 
 function About() {
   const teamMembers = [
@@ -36,6 +37,11 @@ function About() {
       name: "Areeba Ajaz",
       role: "Marketing Executive",
       image: Areeba,
+    },
+    {
+      name: "Sammad Ul Hassan",
+      role: "React Developer & Tailwind CSS Developer",
+      image: sammad,
     },
     {
       name: "Hira Rajput",
