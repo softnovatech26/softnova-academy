@@ -7,7 +7,7 @@ export const sendAdminEmail = async ({ name, email, message }) => {
   try {
     const data = await resend.emails.send({
       from: `SoftNova Website <${process.env.EMAIL_FROM}>`,
-      to: ["softnovatech.pk@gmail.com"],
+      to: ["softnovaacademy.pk@gmail.com"],
       subject: `New Contact Form: ${name}`,
       html: `
         <h2>New Message Received</h2>
@@ -63,7 +63,7 @@ export const sendAutoReply = async (to, name) => {
             <b>Team SoftNova Academy</b>
           </p>
 
-          <p>softnovatech.pk</p>
+          <p>softnovaacademy.pk</p>
         </div>
       `,
     });
