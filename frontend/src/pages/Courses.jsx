@@ -75,7 +75,7 @@ function Courses() {
                       Instructor
                     </p>
 
-                    <p className="mt-1 text-base font-semibold text-white">
+                    <p className="mt-1 text-base font-semibold text-red-500">
                       {course.trainer}
                     </p>
                   </div>

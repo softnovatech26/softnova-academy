@@ -8,6 +8,7 @@ import Trainers from "../pages/Trainers";
 import Projects from "../pages/Projects";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
+import Gallery from "../pages/Gallery";
 
 function AppRoutes() {
   return (
@@ -17,6 +18,7 @@ function AppRoutes() {
       <Route path="/courses/:slug" element={<CourseDetails />} />
       <Route path="/trainers" element={<Trainers />} />
       <Route path="/projects" element={<Projects />} />
+      <Route path="/gallery" element={<Gallery />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
     </Routes>

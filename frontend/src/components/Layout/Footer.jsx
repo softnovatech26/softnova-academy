@@ -9,7 +9,6 @@ import {
   FaGlobeAsia,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import Logo from "../../assets/images/softnova-logo.webp";
 
 const Footer = () => {
   const socialLinks = [
@@ -28,7 +27,7 @@ const Footer = () => {
           <div className="text-center md:text-left">
             <Link to="/" className="inline-flex items-center gap-3">
              <img
-              src={Logo}
+              src="/Logo-22.webp"
                    alt="SoftNova Academy"
                       className="h-10 w-10 rounded-full object-cover"
                           />

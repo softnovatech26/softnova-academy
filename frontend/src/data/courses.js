@@ -4,7 +4,7 @@ export const courses = [
     slug: "html-css-javascript",
     title: "Complete HTML, CSS and JavaScript",
     image: "/html.webp",
-    trainer: "John Smith",
+    trainer: "Bhavish Kumar",
     description:
       "Build responsive websites and modern web applications with hands-on projects.",
     level: "Beginner to Advanced",
@@ -226,7 +226,7 @@ export const courses = [
   slug: "python-data-science",
   title: "Python for Data Science",
   image: "/python.webp",
-  trainer: "Sarah Johnson",
+  trainer: "Samreen Shahzadi",
   description: "Learn Python fundamentals, automation, APIs, and data-focused projects.",
   level: "Beginner",
   duration: "6 Months",
@@ -309,7 +309,7 @@ export const courses = [
   slug: "react-js-development",
   title: "React.js Development",
   image: "/react.webp",
-  trainer: "Mike Davis",
+  trainer: "Sammad Ul Hassan",
   description: "Master modern React with hooks, state management, and component design patterns.",
   level: "Intermediate",
   duration: "6 Months",
@@ -421,7 +421,7 @@ export const courses = [
     slug: "tailwind-css-development",
     title: "Tailwind CSS Development",
     image: "/tailwand.webp",
-    trainer: "Emily Brown",
+    trainer: "Sammad Ul Hassan",
     description:
       "Design beautiful and responsive interfaces using Tailwind CSS utility classes.",
     level: "Intermediate",
@@ -518,7 +518,7 @@ export const courses = [
     slug: "artificial-intelligence",
     title: "Artificial Intelligence",
     image: "/ai.jfif",
-    trainer: "Dr. Alex Kumar",
+    trainer: "Bhavish Kumar and Samreen Shahzadi",
     description:
       "Explore machine learning, neural networks, and AI-powered solutions.",
     level: "Intermediate",
@@ -588,7 +588,7 @@ export const courses = [
     slug: "react-native-development",
     title: "React Native App Development",
     image: "/reactnative.jfif",
-    trainer: "Chris Wilson",
+    trainer: "Areeba Siddique",
     description:
       "Build cross-platform mobile apps using React Native for iOS and Android.",
     level: "Intermediate",
