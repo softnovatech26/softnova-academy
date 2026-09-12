@@ -243,7 +243,7 @@ const Home = () => {
                     </p>
                    <button
   onClick={() =>
-    window.open("https://softnova-student-form.vercel.app/", "_blank")
+    navigate(`/contact?course=${encodeURIComponent(course.name)}`)
   }
   className="w-full bg-red-600 text-white py-2.5 sm:py-3 text-sm sm:text-base rounded-lg font-semibold border border-gray-700 transition-all duration-300 hover:bg-black hover:border-blue-600 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/20"
 >
