@@ -3,18 +3,21 @@ import React from "react";
 
 import class6 from "../assets/images/class 6.webp";
 import haseeb from "../assets/images/haseeb .webp";
-import khadeeja from "../assets/images/khadeja.webp";
-import Hira from "../assets/images/Hira.webp";
+// import khadeeja from "../assets/images/khadeja.webp";
+import Haadiya from "../assets/images/Haadiya Hussain.webp";
+// import Hira from "../assets/images/Hira.webp";
 import Seema from "../assets/images/Seema.webp";
 import iqra from "../assets/images/Iqra.webp";
-import Aree from "../assets/images/Areeba.webp";
+// import Aree from "../assets/images/Areeba.webp";
+import Sidra from "../assets/images/Sidra Akber.webp";
 import ourMission from "../assets/images/our mission.webp";
 import ourVision from "../assets/images/our vission.webp";
 import Areeba from "../assets/images/Areeba Ajaz.webp";
 import Meer from "../assets/images/Meer.webp";
 import bhavish from "../assets/images/Bhavish .webp";
-import samreen from "../assets/images/samreen.webp";
+// import samreen from "../assets/images/samreen.webp";
 import sammad from "../assets/images/sammad.webp";
+
 
 function About() {
   const teamMembers = [
@@ -24,30 +27,30 @@ function About() {
       image: haseeb,
     },
     {
-      name: "Khadeeja Zafar",
-      role: "Human Resources & Marketing Team Leader",
-      image: khadeeja,
+      name: "Haadiya Hussain",
+      role: "Human Resources Manager",
+      image: Haadiya,
     },
     {
-      name: "Areeba Siddique",
+      name: "Sidra Akber",
       role: "Web Team Leader & React Developer",
-      image: Aree,
+      image: Sidra,
     },
     {
       name: "Areeba Ajaz",
-      role: "Marketing Executive",
+      role: "Marketing Executive & Python,JS Developer",
       image: Areeba,
     },
     {
       name: "Sammad Ul Hassan",
-      role: "React Developer & Tailwind CSS Developer",
+      role: "Artificial Intelligence & React JS Instructor",
       image: sammad,
     },
-    {
-      name: "Hira Rajput",
-      role: "Marketing Executive & wordpress Developer",
-      image: Hira,
-    },
+      // {
+      //   name: "Hira Rajput",
+      //   role: "Marketing Executive & wordpress Developer",
+      //   image: Hira,
+      // },
     {
       name: "Meer Muhammad",
       role: "Social Media Executive",
@@ -68,11 +71,11 @@ function About() {
       role: "Marketing Executive",
       image: iqra,
     },
-    {
-      name: "Samreen Shahzadi",
-      role: "Marketing Executive & web Designer",
-      image: samreen,
-    },
+    // {
+    //   name: "Samreen Shahzadi",
+    //   role: "Marketing Executive & web Designer",
+    //   image: samreen,
+    // },
   ];
 
   return (

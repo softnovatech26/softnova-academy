@@ -5,14 +5,16 @@ import card1_img from "../assets/images/card_1_img.webp";
 import card2_img from "../assets/images/card_2_img.webp";
 import card3_img from "../assets/images/card3.webp";
 import Bhavish from "../assets/images/Bhavish .webp";
-import areeba from "../assets/images/Areeba.webp";
+// import areeba from "../assets/images/Areeba.webp";
+import Sidra from "../assets/images/Sidra Akber.webp";
 import Sammad from "../assets/images/sammad.webp";
-import Samreen from "../assets/images/samreen.webp";
+// import Samreen from "../assets/images/samreen.webp";
 import Community_img1 from "../assets/images/class 1.webp";
 import Community_img2 from "../assets/images/class 2.webp";
 import Community_img3 from "../assets/images/class 3.webp";
 import Community_img4 from "../assets/images/class 4.webp";
 import Community_img5 from "../assets/images/class 5.webp";
+import areeba from "../assets/images/Areeba Ajaz.webp";
 // (Community_img6 import removed)
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
@@ -86,29 +88,37 @@ const instructors = [
     image: Bhavish,
   },
   {
-    name: "Areeba Siddique",
+    name: "Sidra Akber",
     role: "React Native Instructor",
-    bio: "3+ years of experience in mobile app development with React Native.",
+    bio: "2+ years of experience in mobile app development with React Native.",
     courses: 1,
     students: "400",
-    image: areeba,
+    image: Sidra,
   },
   {
     name: "Sammad UL Hassan",
-    role: "React JS instructor",
+    role: " Artificial Intelligence & React JS instructor",
     bio: "1+ years of experience in web development with React JS.",
-    courses: 1,
+    courses: 2,
     students: "80",
     image: Sammad,
   },
   {
-  name: "Samreen Shahzadi",
-  role: "Artificial Intelligence & Data Science Instructor",
-  bio: "Expert in AI and data science with a focus on real-world applications.",
-  courses: 2,
-  students: "50",
-  image: Samreen,
-},
+    name: "Areeba Ajaz",
+    role: "Python & JavaScript Instructor",
+    bio: "Passionate about marketing and brand building.",
+    courses: 2,
+    students: "50",
+    image: areeba,
+  }
+//   {
+//   name: "Samreen Shahzadi",
+//   role: "Artificial Intelligence & Data Science Instructor",
+//   bio: "Expert in AI and data science with a focus on real-world applications.",
+//   courses: 2,
+//   students: "50",
+//   image: Samreen,
+// },
 ];
 
 const communityImages = [
