@@ -5,14 +5,17 @@ import Sidra from "../assets/images/Sidra Akber.webp";
 import Sammad from "../assets/images/sammad.webp";
 import Areeba from "../assets/images/Areeba Ajaz.webp";
 // import Samreen from "../assets/images/samreen.webp";
+import mosa from "../assets/images/Mosa.webp";
 
 // BOOM charc foce push
 
 const trainersData = [
   { id: 1, name: "Bhavish Kumar", role: "AI & React instructor", image: Bhavish, description: "2+ years AI and React development experience.", courses: 2, students: 300 },
-  { id: 2, name: "Sidra Akber", role: "React Native Instructor", image: Sidra, description: "2+ years of experience in mobile app development with React Native.", courses: 1, students: 400 }  ,
+  
   { id: 3, name: "Sammad UL Hassan", role: " Artificial Intelligence & React JS instructor", image: Sammad, description: "1+ years of experience in web development with React JS.", courses: 1, students: 80 },
   { id: 4, name: "Areeba Ajaz", role: "Python & JavaScript Instructor", image: Areeba, description: "Passionate about marketing and brand building.", courses: 2, students: 50 },
+  { id: 5, name: "Muhammad Moosa Khan", role: "HTML & CSS Instructor", image: mosa, description: "3+ years HTML and CSS development experience.", courses: 2, students: 100 },
+  { id: 2, name: "Sidra Akber", role: "React Native Instructor", image: Sidra, description: "2+ years of experience in mobile app development with React Native.", courses: 1, students: 400 }  , 
   // { id: 4, name: "Samreen Shahzadi", role: "Artificial Intelligence & Data Science Instructor", image: Samreen, description: "Expert in AI and data science with a focus on real-world applications.", courses: 2, students: 50 },
   // { id: 5, name: "Emily Johnson", role: "Full Stack Developer", image: "/teacher5.jfif", description: "Expert in MERN stack and building scalable web applications.", courses: 10, students: 35000 },
   // { id: 6, name: "Michael Anderson", role: "Python & AI Trainer", image: "/teacher6.jfif", description: "AI specialist teaching Python, ML, and real-world projects.", courses: 9, students: 29000 },

@@ -15,6 +15,7 @@ import Community_img3 from "../assets/images/class 3.webp";
 import Community_img4 from "../assets/images/class 4.webp";
 import Community_img5 from "../assets/images/class 5.webp";
 import areeba from "../assets/images/Areeba Ajaz.webp";
+import Mosa from "../assets/images/Mosa.webp";
 // (Community_img6 import removed)
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
@@ -88,13 +89,22 @@ const instructors = [
     image: Bhavish,
   },
   {
-    name: "Sidra Akber",
-    role: "React Native Instructor",
-    bio: "2+ years of experience in mobile app development with React Native.",
-    courses: 1,
-    students: "400",
-    image: Sidra,
+    name: "Muhammad Moosa Khan",
+    role: "HTML & CSS Instructor",
+    bio: "3+ years HTML and CSS development experience.",
+    courses: 2,
+    students: "100",
+    image: Mosa,
   },
+  // {
+  //   name: "Mosa Khan",
+  //   role: "HTML & CSS Instructor",
+  //   bio: "4+ years of experience in Python and Data Science.",
+  //   courses: 2,
+  //   students: "200",
+  //   image: Mosa,
+  // }
+ 
   {
     name: "Sammad UL Hassan",
     role: " Artificial Intelligence & React JS instructor",
@@ -111,6 +121,14 @@ const instructors = [
     students: "50",
     image: areeba,
   }
+  ,{
+    name: "Sidra Akber",
+    role: "React Native Instructor",
+    bio: "2+ years of experience in mobile app development with React Native.",
+    courses: 1,
+    students: "400",
+    image: Sidra,
+  },
 //   {
 //   name: "Samreen Shahzadi",
 //   role: "Artificial Intelligence & Data Science Instructor",

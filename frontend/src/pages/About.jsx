@@ -17,6 +17,7 @@ import Meer from "../assets/images/Meer.webp";
 import bhavish from "../assets/images/Bhavish .webp";
 // import samreen from "../assets/images/samreen.webp";
 import sammad from "../assets/images/sammad.webp";
+import Mosa from "../assets/images/Mosa.webp";
 
 
 function About() {
@@ -46,11 +47,12 @@ function About() {
       role: "Artificial Intelligence & React JS Instructor",
       image: sammad,
     },
-      // {
-      //   name: "Hira Rajput",
-      //   role: "Marketing Executive & wordpress Developer",
-      //   image: Hira,
-      // },
+    
+     {
+      name: "Muhammad Moosa Khan",
+      role: "Frontend Developer & HTML, CSS Instructor",
+      image: Mosa,
+    },
     {
       name: "Meer Muhammad",
       role: "Social Media Executive",
