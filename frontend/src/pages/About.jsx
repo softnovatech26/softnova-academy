@@ -15,7 +15,7 @@ import ourVision from "../assets/images/our vission.webp";
 import Areeba from "../assets/images/Areeba Ajaz.webp";
 import Meer from "../assets/images/Meer.webp";
 import bhavish from "../assets/images/Bhavish .webp";
-// import samreen from "../assets/images/samreen.webp";
+import samreen from "../assets/images/samreen.webp";
 import sammad from "../assets/images/sammad.webp";
 import Mosa from "../assets/images/Mosa.webp";
 
@@ -73,11 +73,11 @@ function About() {
       role: "Marketing Executive",
       image: iqra,
     },
-    // {
-    //   name: "Samreen Shahzadi",
-    //   role: "Marketing Executive & web Designer",
-    //   image: samreen,
-    // },
+    {
+      name: "Samreen Shahzadi",
+      role: "Marketing Executive & web Designer",
+      image: samreen,
+    },
   ];
 
   return (

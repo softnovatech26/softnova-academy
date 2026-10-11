@@ -11,6 +11,8 @@ import meeting08 from "../assets/Meetings/softnova-meeting-08.webp";
 import meeting09 from "../assets/Meetings/softnova-meeting-09.webp";
 import meeting10 from "../assets/Meetings/softnova-meeting-10.webp";
 
+import Family from "../assets/Family/Family.webp";
+
 const meetingImages = [
   { id: 1, src: meeting01, alt: "SoftNova Academy meeting 1" },
   { id: 2, src: meeting02, alt: "SoftNova Academy meeting 2" },
@@ -21,6 +23,9 @@ const meetingImages = [
   { id: 7, src: meeting08, alt: "SoftNova Academy meeting 7" },
   { id: 8, src: meeting09, alt: "SoftNova Academy meeting 8" },
   { id: 9, src: meeting10, alt: "SoftNova Academy meeting 9" },
+];
+const familyimages = [
+  { id: 1, src: Family, alt: "SoftNova Academy Family 1" },
 ];
 
 function Gallery() {
@@ -106,12 +111,34 @@ function Gallery() {
               data-aos-delay="100"
               data-aos-duration="600"
             >
-              Moments with our SoftNova community — coming soon.
+              Highlights from SoftNova Academy meetings and team gatherings.
             </p>
           </div>
 
-          {/* Reserved space for future SoftNova Family content */}
-          <div aria-hidden="true" className="min-h-[10rem] sm:min-h-[14rem]" />
+         <div className="flex justify-center">
+  {familyimages.map((image) => (
+    <button
+      key={image.id}
+      type="button"
+      onClick={() => openLightbox(image)}
+      data-aos="zoom-in"
+      data-aos-duration="700"
+      className="group relative w-full max-w-4xl overflow-hidden rounded-[1.5rem] border border-white/10 bg-gray-900/50 text-left shadow-lg backdrop-blur transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:border-red-500/40 hover:shadow-red-500/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
+      aria-label={`Open ${image.alt}`}
+    >
+      <div className="relative overflow-hidden">
+        <img
+          src={image.src}
+          alt={image.alt}
+          loading="lazy"
+          className="h-auto w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+        />
+
+        <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/35" />
+      </div>
+    </button>
+  ))}
+</div>
         </section>
 
         {/* Our Meetings */}
