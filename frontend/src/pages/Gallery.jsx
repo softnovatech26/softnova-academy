@@ -11,6 +11,17 @@ import meeting08 from "../assets/Meetings/softnova-meeting-08.webp";
 import meeting09 from "../assets/Meetings/softnova-meeting-09.webp";
 import meeting10 from "../assets/Meetings/softnova-meeting-10.webp";
 
+import htmlClass1 from "../assets/HTML Classes/HTML CLass-1 .jpg";
+import htmlClass2 from "../assets/HTML Classes/HTML CLass-2 .jpg";
+import htmlClass3 from "../assets/HTML Classes/HTML CLass-3 .jpg";
+import htmlClass4 from "../assets/HTML Classes/HTML CLass-4.jpg";
+import htmlClass5 from "../assets/HTML Classes/HTML CLass-5.jpg";
+import htmlClass6 from "../assets/HTML Classes/HTML CLass-6.jpg";
+import htmlClass7 from "../assets/HTML Classes/HTML CLass-7.jpg.jpeg";
+import htmlClass8 from "../assets/HTML Classes/HTML CLass-8.jpg";
+import htmlClass9 from "../assets/HTML Classes/HTML CLass-9.jpg.jpeg";
+import htmlClass12 from "../assets/HTML Classes/HTML CLass-12.jpg";
+
 import Family from "../assets/Family/Family.webp";
 
 const meetingImages = [
@@ -26,6 +37,19 @@ const meetingImages = [
 ];
 const familyimages = [
   { id: 1, src: Family, alt: "SoftNova Academy Family 1" },
+];
+
+const htmlClassImages = [
+  { id: 1, src: htmlClass1, alt: "SoftNova Academy HTML Class 1" },
+  { id: 2, src: htmlClass2, alt: "SoftNova Academy HTML Class 2" },
+  { id: 3, src: htmlClass3, alt: "SoftNova Academy HTML Class 3" },
+  { id: 4, src: htmlClass4, alt: "SoftNova Academy HTML Class 4" },
+  { id: 5, src: htmlClass5, alt: "SoftNova Academy HTML Class 5" },
+  { id: 6, src: htmlClass6, alt: "SoftNova Academy HTML Class 6" },
+  { id: 7, src: htmlClass7, alt: "SoftNova Academy HTML Class 7" },
+  { id: 8, src: htmlClass8, alt: "SoftNova Academy HTML Class 8" },
+  { id: 9, src: htmlClass9, alt: "SoftNova Academy HTML Class 9" },
+  { id: 10, src: htmlClass12, alt: "SoftNova Academy HTML Class 10" },
 ];
 
 function Gallery() {
@@ -85,9 +109,36 @@ function Gallery() {
             data-aos-delay="100"
             data-aos-duration="600"
           >
-            Our online classes will be start from{" "}
-            <span className="font-bold text-red-500">7th September 2026</span>
+            Our online HTML classes will be start {" "}
+            <span className="font-bold text-red-500 text-5xl">very soon </span>
           </p>
+
+          {/* HTML Classes images */}
+          <div className="mt-10 grid grid-cols-1 gap-5 text-left sm:mt-12 sm:gap-6 md:grid-cols-2">
+            {htmlClassImages.map((image, index) => (
+              <button
+                key={image.id}
+                type="button"
+                onClick={() => openLightbox(image)}
+                data-aos="fade-up"
+                data-aos-duration="600"
+                data-aos-delay={Math.min(index * 60, 240)}
+                className="group relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-gray-900/50 text-left shadow-lg backdrop-blur transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:border-red-500/40 hover:shadow-red-500/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
+                aria-label={`Open ${image.alt}`}
+              >
+                <div className="relative aspect-[16/9] overflow-hidden bg-gray-800">
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/35" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-80" />
+                </div>
+              </button>
+            ))}
+          </div>
         </section>
 
         {/* Our SoftNova Family */}
